@@ -1,69 +1,57 @@
-# React + TypeScript + Vite
+-----
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌟 My Portfolio: Full-stack Developer Jo Kangmin 🌟
 
-Currently, two official plugins are available:
+-----
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+안녕하세요\! AI부터 배포까지 다양한 경험을 쌓으며 문제 해결 능력을 키워온 **풀스택 개발자 조강민**입니다. 사용자와 팀의 연결 고리를 만드는 것을 목표로 끊임없이 배우고 성장하고 있습니다.
 
-## Expanding the ESLint configuration
+이 프로젝트는 저의 기술 스택과 작업물을 소개하는 포트폴리오 웹사이트입니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### ✨ 주요 기능 및 특징
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * **인터랙티브한 환영 페이지**: 전체적으로 귀여운 스타일, 사용자 클릭에 반응하는 애니메이션 배경 이미지와 텍스트, 그리고 시각적으로 흥미로운 첫인상을 제공합니다.
+      * 초기 로드 시 배경은 고정되어 있으며, 로딩 및 페이지 클릭 시 애니메이션 이미지들이 등장합니다.
+  * **직관적인 탐색**: GitHub, Velog, 이메일 등 외부 링크에 쉽게 접근할 수 있는 고정된 상단 버튼과, 페이지 어디에서든 최상단으로 이동할 수 있는 "위로 가기" 버튼을 제공합니다.
+  * **호버 인터랙션**: 페이지 위치한 캐릭터들을 통해 목차 이동을 제공 (예: "Project" 아이콘(여우 이미지)에 마우스를 올리면 `Project` 텍스트가 나타나고 아이콘이 살짝 움직이는 재밌는 인터랙션을 제공합니다.)
+  * **반응형 디자인**: 다양한 화면 크기에서도 최적의 사용자 경험을 제공하도록 설계되었습니다. (추후 보강 예정)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 🛠️ 기술 스택
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+이 프로젝트는 다음과 같은 기술들을 활용하여 개발되었습니다.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+  * **React**: 사용자 인터페이스를 구축하기 위한 JavaScript 라이브러리
+  * **TypeScript**: JavaScript에 정적 타입을 추가하여 코드의 안정성과 가독성을 높입니다.
+  * **Tailwind CSS**: 빠르고 효율적인 UI 개발을 위한 유틸리티 우선 CSS 프레임워크
+  * **Framer Motion**: 선언적이고 유연한 UI 애니메이션 구현을 위한 라이브러리
+  * **React Icons**: 다양한 아이콘을 쉽게 사용할 수 있도록 돕는 라이브러리 (GitHub, Velog, Email, ArrowUp 아이콘)
+  * **Webpack/Vite (또는 기타 번들러)**: 프로젝트 빌드 및 애셋 관리
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🚀 프로젝트 실행 방법
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **저장소 클론**:
+    ```bash
+    git clone [프로젝트_저장소_URL]
+    cd [프로젝트_폴더_이름]
+    ```
+2.  **의존성 설치**:
+    ```bash
+    npm install
+    # 또는
+    yarn install
+    ```
+3.  **개발 서버 실행**:
+    ```bash
+    npm run dev
+    # 또는
+    yarn dev
+    ```
+    프로젝트가 실행되면 브라우저에서 `http://localhost:3000` (또는 지정된 포트)으로 접속할 수 있습니다.
+
+### 📝 추가 정보
+
+이 포트폴리오는 지속적으로 업데이트될 예정이며, 저의 새로운 도전과 성장을 담아낼 것입니다. 더 자세한 정보나 협업 문의는 언제든지 환영합니다.
+
+감사합니다\!
+
+-----
