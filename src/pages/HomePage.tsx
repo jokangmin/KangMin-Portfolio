@@ -1,11 +1,19 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import bannerImage from '../assets/banner.png';
+import bannerImage from '../assets/banner2.png';
 import profileImage from '../assets/profile.jpg';
 import myImage from '../assets/my_imo.png';
+import bannerMyImage from '../assets/my1-remove.png';
+import bannerMyImage2 from '../assets/my2-remove.png';
 import foxImage from '../assets/fox.png';
 import rabbitImage from '../assets/rabbit.png';
-import cowImage from '../assets/cow.png';
+import cowImage from '../assets/cow2.png';
+import pen1 from '../assets/pen1-Photoroom.png';
+import pen2 from '../assets/pen2-Photoroom.png';
+import pen3 from '../assets/pen3-Photoroom.png';
+import pen4 from '../assets/pen4-Photoroom.png';
+import pen5 from '../assets/pen5-Photoroom.png';
+import pen6 from '../assets/pen6-Photoroom.png';
 import { FaGithub, FaArrowUp } from 'react-icons/fa';
 import { SiVelog } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
@@ -27,10 +35,18 @@ const HomePage = () => {
   const [isFoxHovered, setIsFoxHovered] = useState(false);
   const [isRabbitHovered, setIsRabbitHovered] = useState(false);
   const [isCowHovered, setIsCowHovered] = useState(false);
+  const [isBannerMyImageHovered, setIsBannerMyImageHovered] = useState(false);
 
   const handleScreenClick = () => {
     if (!animationStarted) {
       setAnimationStarted(true);
+    }
+  };
+
+  const scrollToAboutMe = () => {
+    const aboutMeSection = document.getElementById('about-me-section');
+    if (aboutMeSection) {
+      aboutMeSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -79,14 +95,106 @@ const HomePage = () => {
         alt="banner Image"
         className="w-full h-full object-cover rounded-xl z-50 fixed -translate-x-1/2"
         initial={{ x: '0%' }}
-        animate={{ x: '-100%' }}
-        transition={{ delay: 1 ,duration: 6, ease: 'easeInOut' }}
+        animate={animationStarted ? { x: '-200%' } : { x: '0%'}}
+        transition={{ duration: 3, ease: 'easeInOut' }}
       />
+
+      <motion.p
+        className="text-5xl font-bold text-slate-950 z-50 fixed left-[41%] top-1/3"
+        initial={{ x: '0%', opacity: 1 }}
+        animate={animationStarted ? { x: '-400%', opacity: 0 } : { x: '0%', opacity: 1 }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
+      >
+        KangMin Portfolio
+      </motion.p>
+
+      <motion.img
+        src={isBannerMyImageHovered ? bannerMyImage2 : bannerMyImage} // 호버 상태에 따라 이미지 교체
+        alt="banner my Image"
+        className="w-64 object-cover rounded-xl z-50 fixed left-[45%] top-[45%] -translate-x-1/2 -translate-y-1/2 pointer-events-auto" // translate-x-[55%] 제거
+        initial={{ x: '0%' }}
+        animate={animationStarted ? { x: '-400%', opacity: 0 } : { x: '0%', opacity: 1 }}
+        transition={{ duration: 1.5, ease: 'easeInOut' }}
+        onMouseEnter={() => setIsBannerMyImageHovered(true)} // 호버 시작 시 상태 변경
+        onMouseLeave={() => setIsBannerMyImageHovered(false)} // 호버 종료 시 상태 변경
+      />
+
+      {/* "Click Screen */}
+      <motion.p
+        className="text-3xl font-semibold text-myPalette-500 z-50 fixed left-[47%] bottom-[25%] transform -translate-x-1/2"
+        initial={{ opacity: 1 }} // 초기 투명도 0
+        animate={animationStarted ? { x: '-400%', opacity: 0 } : { opacity: [0, 1, 0], y: 0 }} // 깜빡임 또는 사라짐
+        transition={
+          animationStarted
+            ? { duration: 1.3, ease: 'easeInOut' } // 사라지는 애니메이션
+            : {
+                duration: 7, // 깜빡임 주기
+                ease: 'easeInOut',
+                repeat: Infinity, // 무한 반복
+                repeatType: 'loop', // 반복 타입
+              }
+        }
+      >
+        Click Screen 🖤
+      </motion.p>
+
 
       {/* ---------- 메인 콘텐츠 ----------- */}
 
       {/* 배경 이미지를 위한 div (스크롤 시 고정) */}
-      <div className="h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-[url('../src/assets/green2.jpg')] z-10"></div>
+      <div className="h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-[url('../src/assets/banner2.png')] z-10"></div>
+
+      {/* pen doodle 이미지 */}
+      <motion.img
+        src={pen1}
+        alt="Pen doodle 1"
+        className="fixed w-[24%] h-auto z-40 right-[6%] top-[8%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.img
+        src={pen2}
+        alt="Pen doodle 2"
+        className="fixed w-[52%] h-auto z-40 left-[9%] top-[10%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.img
+        src={pen3}
+        alt="Pen doodle 3"
+        className="fixed w-[9%] h-auto z-40 right-[2%] bottom-[38%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.img
+        src={pen4}
+        alt="Pen doodle 4"
+        className="fixed w-[21%] h-auto z-40 right-[20%] bottom-[7%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.img
+        src={pen5}
+        alt="Pen doodle 5"
+        className="fixed w-[15%] h-auto z-40 left-[39%] bottom-[2%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.img
+        src={pen6}
+        alt="Pen doodle 6"
+        className="fixed w-[12%] h-auto z-40 left-[4%] bottom-[3%]"
+        initial={{ opacity: 0 }}
+        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      />
+
+
 
       {/* 텍스트 및 프로필 이미지를 위한 div (스크롤 시 고정) */}
       <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
@@ -94,9 +202,10 @@ const HomePage = () => {
         <div className="text-right space-y-4 pointer-events-auto">
           <motion.h1
             className="text-6xl text-right font-bold"
+            // animationStarted가 true일 때만 애니메이션 실행
             initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: [0, 1, 1, 0], y: [0, 0, 0, -30] }}
-            transition={{ delay: 4.5, duration: 2.5, times: [0, 0.2, 0.8, 1] }}
+            animate={animationStarted ? { opacity: [0, 1, 1, 0], y: [0, 0, 0, -30] } : {}}
+            transition={{ delay: 2, duration: 2.5, times: [0, 0.2, 0.8, 1] }}
           >
             안녕하세요.
           </motion.h1>
@@ -104,20 +213,20 @@ const HomePage = () => {
           <motion.h1
             className="text-4xl font-bold"
             initial={{ opacity: 0, x: 0 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 7, duration: 1 }}
+            animate={animationStarted ? { opacity: 1, x: 0 } : {}}
+            transition={{ delay: 5, duration: 1 }}
           >
             Full-stack 개발자 <span className="text-myPalette-500">조강민</span>입니다.
           </motion.h1>
 
           <motion.div
             initial="hidden"
-            animate="visible"
+            animate={animationStarted ? "visible" : "hidden"}
             variants={{
               visible: {
                 transition: {
                   staggerChildren: 0.5,
-                  delayChildren: 7.5,
+                  delayChildren: 6,
                 },
               },
             }}
@@ -150,16 +259,16 @@ const HomePage = () => {
           alt="Profile"
           className="w-64 h-auto rounded-2xl shadow-xl object-cover ms-7 pointer-events-auto"
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 7, duration: 1 }}
+          animate={animationStarted ? { opacity: 1, scale: 1 } : {}}
+          transition={{ delay: 6.5, duration: 1 }}
         />
 
         {/* fox - project 이미지 및 호버 애니메이션 */}
         <motion.div
-          className="fixed bottom-32 left-52 z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+          className="fixed bottom-[10%] left-[17%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 8, duration: 1 }}
+          animate={animationStarted ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 7.5, duration: 1 }}
           onMouseEnter={() => setIsFoxHovered(true)}
           onMouseLeave={() => setIsFoxHovered(false)}
         >
@@ -181,12 +290,13 @@ const HomePage = () => {
 
         {/* rabbit - about me 이미지 및 호버 애니메이션 */}
         <motion.div
-          className="fixed bottom-16 left-1/3 z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+          className="fixed top-[20%] left-[10%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 8, duration: 1 }} 
+          animate={animationStarted ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 7.5, duration: 1 }}
           onMouseEnter={() => setIsRabbitHovered(true)}
           onMouseLeave={() => setIsRabbitHovered(false)}
+          onClick={scrollToAboutMe}
         >
           <motion.h2
             className="text-2xl text-slate-900 font-bold mb-2"
@@ -206,10 +316,10 @@ const HomePage = () => {
 
         {/* cow - education & License 이미지 및 호버 애니메이션 */}
         <motion.div
-          className="fixed bottom-64 right-48 z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+          className="fixed bottom-[20%] right-48 z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 8, duration: 1 }} 
+          animate={animationStarted ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 7.5, duration: 1 }}
           onMouseEnter={() => setIsCowHovered(true)}
           onMouseLeave={() => setIsCowHovered(false)}
         >
@@ -236,8 +346,11 @@ const HomePage = () => {
         id="about-me-section"
         className="relative z-40 h-screen flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed py-10 px-4"
       >
-        <div className="absolute inset-0 bg-myPalette-200"></div>
-        <div className="relative z-10 w-full max-w-4xl mx-auto p-4 sm:p-8 bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl text-slate-950 flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-8">
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('../src/assets/note.png')]"></div>
+
+        <div className="relative z-10 w-[33%] h-[85%] max-w-4xl mx-auto p-4 sm:p-8 bg-white/80 backdrop-blur-sm 
+        rounded-lg shadow-2xl text-slate-950 flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-8 2xl:right-[11%] 2xl:bottom-[3%]">
           {/* 왼쪽: 프로필 이미지 및 소셜 링크 */}
           <motion.div
             className="flex-shrink-0 flex flex-col items-center text-center"
@@ -293,16 +406,22 @@ const HomePage = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-myPalette-700 mb-2 sm:mb-4">What I Love Doing</h3>
-              <ul className="list-disc list-inside text-gray-700 text-base sm:text-lg">
-                <li>데이터 기반의 인사이트 도출 및 활용</li>
-                <li>새로운 기술 스택 탐구 및 적용</li>
-                <li>효율적인 아키텍처 설계</li>
-                <li>사용자 경험을 개선하는 UI/UX 구현</li>
-              </ul>
+              
             </motion.div>
           </div>
         </div>
+
+        <motion.div
+          className='relative w-[16%] right-[31%] bottom-[-27%] pt-4 z-40'
+        >
+          <h3 className="text-2xl sm:text-2xl font-bold text-myPalette-700 mb-2 sm:mb-4">What I Love Doing</h3>
+          <ul className="list-disc list-inside text-gray-700 text-base sm:text-lg">
+            <li>데이터 기반의 인사이트 도출 및 활용</li>
+            <li>새로운 기술 스택 탐구 및 적용</li>
+            <li>효율적인 아키텍처 설계</li>
+            <li>사용자 경험을 개선하는 UI/UX 구현</li>
+          </ul>
+        </motion.div>
       </section>
       {/* --- About me 섹션 끝 --- */}
 
