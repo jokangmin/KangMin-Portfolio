@@ -5,17 +5,17 @@ import profileImage from '../assets/profile.jpg';
 import myImage from '../assets/my_imo.png';
 import bannerMyImage from '../assets/my1-remove.png';
 import bannerMyImage2 from '../assets/my2-remove.png';
-import foxImage from '../assets/fox.png';
-import rabbitImage from '../assets/rabbit.png';
+import foxImage from '../assets/fox2.png';
+import rabbitImage from '../assets/rabbit2.png';
 import cowImage from '../assets/cow2.png';
 import pen1 from '../assets/pen1-Photoroom.png';
 import pen2 from '../assets/pen2-Photoroom.png';
 import pen3 from '../assets/pen3-Photoroom.png';
 import pen4 from '../assets/pen4-Photoroom.png';
-import pen5 from '../assets/pen5-Photoroom.png';
+import pen5 from '../assets/pen5-Photoroom.png'; // pen5.png 파일 이름을 확인해주세요. 위에서 보낸 코드에서는 pen5-Photoroom.png 였는데, 만약 pen5.png가 올바르다면 이대로 사용하시면 됩니다.
 import pen6 from '../assets/pen6-Photoroom.png';
-import { FaGithub, FaArrowUp } from 'react-icons/fa';
-import { SiVelog } from 'react-icons/si';
+import { FaGithub, FaArrowUp, FaJava } from 'react-icons/fa';
+import { SiAmazonwebservices, SiCss3, SiDocker, SiFigma, SiGithubactions, SiHtml5, SiJavascript, SiMysql, SiNaver, SiNodedotjs, SiNotion, SiOracle, SiReact, SiSpringboot, SiTypescript, SiVelog } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 
 const HomePage = () => {
@@ -37,6 +37,17 @@ const HomePage = () => {
   const [isCowHovered, setIsCowHovered] = useState(false);
   const [isBannerMyImageHovered, setIsBannerMyImageHovered] = useState(false);
 
+  useEffect(() => {
+    if (!animationStarted) {
+      document.body.style.overflow = 'hidden'; // 스크롤 비활성화
+    } else {
+      document.body.style.overflow = 'auto'; // 스크롤 활성화
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [animationStarted]);
+
   const handleScreenClick = () => {
     if (!animationStarted) {
       setAnimationStarted(true);
@@ -47,6 +58,20 @@ const HomePage = () => {
     const aboutMeSection = document.getElementById('about-me-section');
     if (aboutMeSection) {
       aboutMeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToEducation = () => {
+    const educationSection = document.getElementById('education-section');
+    if (educationSection) {
+      educationSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProject = () => {
+    const projectSection = document.getElementById('project-section');
+    if (projectSection) {
+      projectSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -80,6 +105,34 @@ const HomePage = () => {
           <MdEmail size={30} />
         </a>
       </div>
+
+      {/* 왼쪽 상단 고정 내비게이션 메뉴 */}
+      <motion.div
+        className="fixed top-5 right-52
+         z-50 flex flex-row gap-7 p-1 px-7 backdrop-blur-sm rounded-lg shadow-lg"
+        initial={{ opacity: 0, x: -100 }}
+        animate={animationStarted ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+        transition={{ delay: 8, duration: 0.8 }} // 애니메이션 시작 후 나타나도록 딜레이 조정
+      >
+        <button
+          onClick={scrollToAboutMe}
+          className="text-lg font-semibold text-myPalette-700 px-4 py-2 rounded-md hover:bg-myPalette-100 transition-colors duration-200"
+        >
+          About me
+        </button>
+        <button
+          onClick={scrollToEducation}
+          className="text-lg font-semibold text-myPalette-700 px-4 py-2 rounded-md hover:bg-myPalette-100 transition-colors duration-200"
+        >
+          Education & License
+        </button>
+        <button
+          onClick={scrollToProject}
+          className="text-lg font-semibold text-myPalette-700 px-4 py-2 rounded-md hover:bg-myPalette-100 transition-colors duration-200"
+        >
+          Project
+        </button>
+      </motion.div>
 
       {/* 위로 가기 버튼 */}
       <button
@@ -122,13 +175,13 @@ const HomePage = () => {
       {/* "Click Screen */}
       <motion.p
         className="text-3xl font-semibold text-myPalette-500 z-50 fixed left-[47%] bottom-[25%] transform -translate-x-1/2"
-        initial={{ opacity: 1 }} // 초기 투명도 0
-        animate={animationStarted ? { x: '-400%', opacity: 0 } : { opacity: [0, 1, 0], y: 0 }} // 깜빡임 또는 사라짐
+        initial={{ opacity: 1 }}
+        animate={animationStarted ? { x: '-400%', opacity: 0 } : { y: [-7,7,-7] }} // 깜빡임 또는 사라짐
         transition={
           animationStarted
             ? { duration: 1.3, ease: 'easeInOut' } // 사라지는 애니메이션
             : {
-                duration: 7, // 깜빡임 주기
+                duration: 3, // 깜빡임 주기
                 ease: 'easeInOut',
                 repeat: Infinity, // 무한 반복
                 repeatType: 'loop', // 반복 타입
@@ -182,8 +235,12 @@ const HomePage = () => {
         alt="Pen doodle 5"
         className="fixed w-[15%] h-auto z-40 left-[39%] bottom-[2%]"
         initial={{ opacity: 0 }}
-        animate={animationStarted ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+        animate={animationStarted ? { opacity: [1, 1, 1], y: [-5, 5, -5] } : { opacity: 0 }}
+        transition={{
+          duration: 1.5,
+          ease: 'easeInOut',
+          repeat: animationStarted ? Infinity : 0
+        }}
       />
       <motion.img
         src={pen6}
@@ -271,6 +328,7 @@ const HomePage = () => {
           transition={{ delay: 7.5, duration: 1 }}
           onMouseEnter={() => setIsFoxHovered(true)}
           onMouseLeave={() => setIsFoxHovered(false)}
+          onClick={scrollToProject}
         >
           <motion.h2
             className="text-2xl text-slate-900 font-bold mb-2"
@@ -322,6 +380,7 @@ const HomePage = () => {
           transition={{ delay: 7.5, duration: 1 }}
           onMouseEnter={() => setIsCowHovered(true)}
           onMouseLeave={() => setIsCowHovered(false)}
+          onClick={scrollToEducation}
         >
           <motion.h2
             className="text-2xl text-slate-900 font-bold mb-2"
@@ -349,8 +408,8 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('../src/assets/note.png')]"></div>
 
-        <div className="relative z-10 w-[33%] h-[85%] max-w-4xl mx-auto p-4 sm:p-8 bg-white/80 backdrop-blur-sm 
-        rounded-lg shadow-2xl text-slate-950 flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-8 2xl:right-[11%] 2xl:bottom-[3%]">
+        <div className="relative z-10 w-[33%] h-[82%] max-w-4xl mx-auto p-4 sm:p-8 bg-white/80 backdrop-blur-sm 
+        rounded-lg shadow-2xl text-slate-950 flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-8 2xl:right-[2%] 2xl:bottom-[3%]">
           {/* 왼쪽: 프로필 이미지 및 소셜 링크 */}
           <motion.div
             className="flex-shrink-0 flex flex-col items-center text-center"
@@ -398,21 +457,82 @@ const HomePage = () => {
               </p>
             </motion.div>
 
-            {/* Optional: Skills or Interests section */}
-            <motion.div
-              className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-            >
-              
-            </motion.div>
           </div>
         </div>
 
+        {/* Optional: Skills or Interests section */}
+        <motion.div
+          className='relative w-[20%] right-[10%] bottom-[25%] pt-4 z-40'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          <h3 className="text-4xl font-bold text-myPalette-700 mb-2 sm:mb-4">🤎 Skill & Tools</h3>
+          <ul className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-5 text-sm sm:text-base">
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiReact size={24} className="text-blue-500" /> React
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiJavascript size={24} className="text-yellow-500" /> JavaScript
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiTypescript size={24} className="text-blue-700" /> TypeScript
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiHtml5 size={24} className="text-orange-600" /> HTML
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiCss3 size={24} className="text-blue-600" /> CSS
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiSpringboot size={24} className="text-green-600" /> Spring Boot
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <FaJava size={24} className="text-red-700" /> Java
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiMysql size={24} className="text-blue-800" /> MySQL
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiOracle size={24} className="text-red-500" /> Oracle
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiNodedotjs size={24} className="text-green-500" /> Node.js
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              JPA {/* JPA 아이콘은 react-icons에 없어 텍스트로 유지했습니다. */}
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiDocker size={24} className="text-blue-700" /> Docker
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiAmazonwebservices size={24} className="text-orange-400" /> AWS
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiNaver size={24} className='text-green-400' /> NCP {/* SiNaver 아이콘을 NCP에 적용했습니다. */}
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiGithubactions size={24} className="text-blue-500" /> Github Action
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              Slack {/* Slack 아이콘은 SiSlack으로 import되었으나, 위 리스트에는 notion과 figma 사이에 누락되어 텍스트로 유지합니다. 필요시 SiSlack을 추가하세요. */}
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiNotion size={24} className="text-purple-600" /> Notion
+            </li>
+            <li className="flex items-center gap-1 bg-myPalette-100 text-myPalette-700 px-3 py-1.5 rounded-full shadow-md">
+              <SiFigma size={24} className="text-red-500" /> Figma
+            </li>
+          </ul>
+        </motion.div>
+        
         <motion.div
           className='relative w-[16%] right-[31%] bottom-[-27%] pt-4 z-40'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
         >
           <h3 className="text-2xl sm:text-2xl font-bold text-myPalette-700 mb-2 sm:mb-4">What I Love Doing</h3>
           <ul className="list-disc list-inside text-gray-700 text-base sm:text-lg">
@@ -425,20 +545,259 @@ const HomePage = () => {
       </section>
       {/* --- About me 섹션 끝 --- */}
 
-      {/* Placeholder for Project Section */}
+      {/* Education & License Section */}
       <section
         id="education-section"
-        className="h-screen z-40 flex items-center justify-center bg-gray-100"
+        className="relative z-40 h-screen flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed py-10 px-4"
       >
-        <h2 className="text-3xl sm:text-5xl font-bold text-slate-700">Education & License Section (Coming Soon!)</h2>
-      </section>
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-[center_45%] bg-no-repeat bg-[url('../src/assets/book.png')]"></div>
 
-      {/* Placeholder for Education & License Section */}
+        <div className="relative z-10 w-[80%] h-[85%] max-w-7xl mx-auto p-4 sm:p-8 backdrop-blur-sm 
+        rounded-lg text-slate-950 flex flex-col md:flex-row gap-8">
+          {/* LICENCE 섹션 (왼쪽) */}
+          <motion.div
+            className="flex-1 p-6 bg-myPalette-50 rounded-lg flex flex-col items-center md:items-start text-center md:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-extrabold text-myPalette-700 mb-6 border-b-2 border-myPalette-500 pb-2">
+              LICENCE
+            </h2>
+            <div className="space-y-6 w-full">
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800">정보처리산업기사</h3>
+                <p className="text-gray-700">발급처: 한국산업인력공단</p>
+                <p className="text-sm text-gray-500">2023.09.01</p>
+              </div>
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800">SQLD (SQL Developer)</h3>
+                <p className="text-gray-700">발급처: 한국데이터산업진흥원</p>
+                <p className="text-sm text-gray-500">2024.06.21</p>
+              </div>
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800">NCP (Naver Cloud Professional)</h3>
+                <p className="text-gray-700">발급처: 네이버클라우드플랫폼</p>
+                <p className="text-sm text-gray-500">2024.12.25</p>
+              </div>
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800">JLPT N4</h3>
+                <p className="text-gray-700">발급처: 일본국제교류기금</p>
+                <p className="text-sm text-gray-500">2025.08.25 예정</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* EDUCATION 섹션 (오른쪽) */}
+          <motion.div
+            className="flex-1 p-6 bg-myPalette-50 rounded-lg flex flex-col items-center md:items-start text-center md:text-left"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-extrabold text-myPalette-700 mb-6 border-b-2 border-myPalette-500 pb-2">
+              EDUCATION
+            </h2>
+            <div className="space-y-8 w-full">
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800 mb-1">인덕대학교 졸업</h3>
+                <p className="text-gray-700">📖 컴퓨터전자공학과 학사 2019.03 - 2024.02</p>
+                <p className="text-sm text-gray-500 mb-4">평균 학점: 4.08 / 4.5</p>
+                <div className="text-base text-gray-600 space-y-1">
+                  <p>- 회로이론, 전자회로, 디지털공학 등 전자공학 기초 지식</p>
+                  <p>- Python 및 C++을 이용한 알고리즘, 임베디드 시스템 설계 및 개발</p>
+                  <p>- 캡스톤 디자인 프로젝트 참여를 통한 문제 해결 능력 향상</p>
+                  <p>- 팀 프로젝트를 통해 협업 및 커뮤니케이션 능력 강화</p>
+                </div>
+              </div>
+              <div className="bg-white p-4 rounded-md shadow-sm border border-gray-200">
+                <h3 className="text-xl font-bold text-myPalette-800 mb-1">네이버클라우드 비트캠프 AIaaS 9기</h3>
+                <p className="text-gray-700">2024.07 - 2025.01</p>
+                <div className="text-base text-gray-600 space-y-1 mt-3">
+                  <p>- JAVA, 리눅스 기초 및 심화 </p>
+                  <p>- React, JS, Spring Boot, JSP 등 풀스택 기반 수업 및 실습</p>
+                  <p>- 클라우드 환경(AWS, NCP)에서 배포 및 관리 실습</p>
+                  <p>- 데이터 처리 및 분석 기법 학습 (네트워크, 데이터베이스)</p>
+                  <p>- 3-4회 팀 프로젝트 기획부터 구현, 배포, 운영까지 전 과정 경험 및 포트폴리오</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      {/* --- Education & License 섹션 끝 --- */}
+
+      {/* Placeholder for Project Section */}
+      {/* Project Section */}
       <section
         id="project-section"
-        className="h-screen z-40 flex items-center justify-center bg-myPalette-200"
+        className="relative z-40 py-10 px-4 bg-myPalette-200"
       >
-        <h2 className="text-3xl sm:text-5xl font-bold text-slate-700">Project Section (Coming Soon!)</h2>
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-center bg-repeat bg-[url('../src/assets/circuit.png')] opacity-20"></div>
+        <div className="relative z-10 max-w-6xl mx-auto py-8">
+          <motion.h2
+            className="text-4xl font-extrabold text-slate-900 mb-8 text-center"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Projects
+          </motion.h2>
+          {/* 한 줄에 2개씩 표시되도록 grid-cols-2로 변경 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Project: KangMin Portfolio */}
+            <motion.div
+              className="bg-white rounded-lg shadow-xl overflow-hidden mx-auto md:mx-0"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+            >
+              <img
+                src="https://via.placeholder.com/500x300/dddddd/333333?Text=KangMin Portfolio"
+                alt="KangMin Portfolio"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">포트폴리오 프로젝트</h3>
+                <p className="text-gray-600 text-sm mb-2">나만의 웹 사이트 포트폴리오</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">React</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">TypeScript</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Tailwind CSS</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Framer Motion</span>
+                </div>
+                <p className="text-gray-500 text-xs">📅 2025년 7월 19일~ 진행중</p>
+                <a href="#" className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors">
+                  상세 보기
+                </a>
+              </div>
+            </motion.div>
+            {/* Project 1: TalkTalk Ai Interview Project */}
+            <motion.div
+              className="bg-white rounded-lg shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <img
+                src="https://via.placeholder.com/500x300/cccccc/ffffff?Text=TalkTalk+AI"
+                alt="TalkTalk Ai Interview Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">TalkTalk Ai Interview 프로젝트</h3>
+                <p className="text-gray-600 text-sm mb-2">AI 면접 시뮬레이션 웹 애플리케이션 개발</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">React</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Spring Boot / java</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">OpenAi API</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">JavaScript</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">MySQL</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Node.js</span>
+                </div>
+                <p className="text-gray-500 text-xs">📅 2025년 2월 15일 → 2025년 6월 15일 (리팩토링)</p>
+                <a href="#" className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors">
+                  상세 보기
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Project 2: Moivo Project */}
+            <motion.div
+              className="bg-white rounded-lg shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <img
+                src="https://via.placeholder.com/500x300/999999/ffffff?Text=Moivo+Project"
+                alt="Moivo Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">Moivo 프로젝트</h3>
+                <p className="text-gray-600 text-sm mb-2">모바일 기반의 영화 정보 및 예매 플랫폼 개발</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">React / js</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Node.js</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Spring Boot / java</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">JWT</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">MySQL</span>
+                </div>
+                <p className="text-gray-500 text-xs">📅 2024년 11월 15일 → 2025년 1월 3일</p>
+                <a href="#" className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors">
+                  상세 보기
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Project 3: BooBooBook Project */}
+            <motion.div
+              className="bg-white rounded-lg shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <img
+                src="https://via.placeholder.com/500x300/f0f0f0/333333?Text=BooBooBook"
+                alt="BooBooBook Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">BooBooBook 프로젝트</h3>
+                <p className="text-gray-600 text-sm mb-2">그림책 기반의 사용자 참여형 스토리텔링 플랫폼</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">React / js</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Spring / java</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">JQuery</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">ORACLE</span>
+                </div>
+                <p className="text-gray-500 text-xs">📅 2024년 9월 30일 → 2024년 10월 21일</p>
+                <a href="#" className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors">
+                  상세 보기
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Project 4: ODIGA Project */}
+            <motion.div
+              className="bg-white rounded-lg shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <img
+                src="https://via.placeholder.com/500x300/cceeff/003366?Text=ODIGA+Project"
+                alt="ODIGA Project"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2">ODIGA 프로젝트</h3>
+                <p className="text-gray-600 text-sm mb-2">여행 계획 및 공유를 위한 맞춤형 추천 서비스</p>
+                <div className="flex flex-wrap gap-2 mb-2">
+                <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">React / js</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">Spring / java</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">MyBatis</span>
+                  <span className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold">ORACLE</span>
+                </div>
+                <p className="text-gray-500 text-xs">📅 2024년 8월 30일 → 2024년 9월 27일</p>
+                <a href="#" className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors">
+                  상세 보기
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
     </div>
