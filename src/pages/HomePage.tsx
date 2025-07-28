@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'; // Suspense는 코드 스플리팅을 위해 유지
+import React, { Suspense } from 'react';
 import HeaderFixedButtons from '../components/layout/HeaderFixedButtons.tsx';
 import FixedNavigation from '../components/layout/FixedNavigation.tsx';
 import ScrollToTopButton from '../components/layout/ScrollToTopButton.tsx';
