@@ -1,57 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense } from 'react'; // Suspense는 코드 스플리팅을 위해 유지
 import HeaderFixedButtons from '../components/layout/HeaderFixedButtons.tsx';
 import FixedNavigation from '../components/layout/FixedNavigation.tsx';
 import ScrollToTopButton from '../components/layout/ScrollToTopButton.tsx';
 import IntroBanner from '../components/common/IntroBanner.tsx';
 import PenDoodles from '../components/common/PenDoodles.tsx';
 import MainContentOverlay from '../components/common/MainContentOverlay.tsx';
-import AboutMeSection from '../components/common/AboutMeSection.tsx';
-import EducationLicenseSection from '../components/common/EducationLicenseSection.tsx';
-import ProjectSection from '../components/common/ProjectSection.tsx';
+
+import { useAnimation } from '../context/AnimationContext.tsx';
+
+const AboutMeSection = React.lazy(() => import('../components/common/AboutMeSection.tsx'));
+const EducationLicenseSection = React.lazy(() => import('../components/common/EducationLicenseSection.tsx'));
+const ProjectSection = React.lazy(() => import('../components/common/ProjectSection.tsx'));
 
 const HomePage: React.FC = () => {
-  const [animationStarted, setAnimationStarted] = useState<boolean>(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!animationStarted) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [animationStarted]);
-
-  // 스크롤 함수들
-  const scrollToAboutMe = () => {
-    const aboutMeSection = document.getElementById('about-me-section');
-    if (aboutMeSection) {
-      aboutMeSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToEducation = () => {
-    const educationSection = document.getElementById('education-section');
-    if (educationSection) {
-      educationSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToProject = () => {
-    const projectSection = document.getElementById('project-section');
-    if (projectSection) {
-      projectSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { animationStarted, setAnimationStarted, scrollToAboutMe, scrollToEducation, scrollToProject } = useAnimation();
 
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-myPalette-300 text-slate-950 flex flex-col">
@@ -82,14 +44,21 @@ const HomePage: React.FC = () => {
         scrollToProject={scrollToProject}
       />
 
-      {/* About Me 섹션 */}
-      <AboutMeSection />
+      {/* 코드 스플리팅 적용 */}
+      <Suspense fallback={
+        <div className="flex justify-center items-center h-48 text-gray-600">
+          Loading sections...
+        </div>
+      }>
+        {/* About Me 섹션 */}
+        <AboutMeSection />
 
-      {/* Education & License 섹션 */}
-      <EducationLicenseSection />
+        {/* Education & License 섹션 */}
+        <EducationLicenseSection />
 
-      {/* Project Section */}
-      <ProjectSection /> 
+        {/* Project Section */}
+        <ProjectSection />
+      </Suspense>
     </div>
   );
 };
