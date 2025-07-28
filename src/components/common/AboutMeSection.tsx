@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import myImage from '../../assets/my_imo.png';
+import myImage from '../../assets/my_imo.webp';
 import { SiAmazonwebservices, SiCss3, SiDocker, SiFigma, SiGithubactions, SiHtml5, SiJavascript, SiMysql, SiNaver, SiNodedotjs, SiNotion, SiOracle, SiReact, SiSpringboot, SiTypescript } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 
@@ -11,7 +11,7 @@ const AboutMeSection: React.FC = React.memo(() => {
       className="relative z-40 h-screen flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed py-10 px-4"
     >
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('../src/assets/note.png')]"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('../src/assets/note.webp')]"></div>
 
       <div className="relative z-10 w-[33%] h-[82%] max-w-4xl mx-auto p-4 sm:p-8 bg-white/80 backdrop-blur-sm rounded-lg shadow-2xl text-slate-950 flex flex-col md:flex-row items-center md:items-start gap-4 sm:gap-8 2xl:right-[2%] 2xl:bottom-[3%]">
         <motion.div
@@ -25,6 +25,7 @@ const AboutMeSection: React.FC = React.memo(() => {
             src={myImage}
             alt="조강민 Profile"
             className="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-full border-2 sm:border-4 border-myPalette-500 shadow-lg mb-2 sm:mb-4"
+            loading="lazy"
           />
           <h3 className="text-xl sm:text-3xl font-bold text-myPalette-700 mb-1 sm:mb-2">조강민</h3>
           <p className="text-base sm:text-lg text-gray-700 mb-2 sm:mb-4">Full-stack Developer</p>

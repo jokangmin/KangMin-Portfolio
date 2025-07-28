@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import profileImage from '../../assets/profile.jpg';
-import foxImage from '../../assets/fox2.png';
-import rabbitImage from '../../assets/rabbit2.png';
-import cowImage from '../../assets/cow2.png';
+import profileImage from '../../assets/profile.webp';
+import foxImage from '../../assets/fox2.webp';
+import rabbitImage from '../../assets/rabbit2.webp';
+import cowImage from '../../assets/cow2.webp';
 
 interface MainContentOverlayProps {
   animationStarted: boolean;
@@ -81,6 +81,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
         initial={{ opacity: 0, scale: 0.8 }}
         animate={animationStarted ? { opacity: 1, scale: 1 } : {}}
         transition={{ delay: 6.5, duration: 1 }}
+        loading="lazy"
       />
 
       {/* fox - project 이미지 및 호버 애니메이션 */}
@@ -106,6 +107,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
           className="w-56"
           animate={{ scale: isFoxHovered ? 0.95 : 1, y: isFoxHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
+          loading="lazy"
         />
       </motion.div>
 
@@ -132,6 +134,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
           className="w-56"
           animate={{ scale: isRabbitHovered ? 0.95 : 1, y: isRabbitHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
+          loading="lazy"
         />
       </motion.div>
 
@@ -158,6 +161,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
           className="w-64"
           animate={{ scale: isCowHovered ? 0.95 : 1, y: isCowHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
+          loading="lazy"
         />
       </motion.div>
     </div>

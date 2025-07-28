@@ -8,7 +8,7 @@ const EducationLicenseSection: React.FC = React.memo(() => {
       className="relative z-40 h-screen flex items-center justify-center bg-center bg-cover bg-no-repeat bg-fixed py-10 px-4"
     >
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-[center_45%] bg-no-repeat bg-[url('../src/assets/book.png')]"></div>
+      <div className="absolute inset-0 bg-[center_45%] bg-no-repeat bg-[url('../src/assets/book.webp')]"></div>
 
       <div className="relative z-10 w-[80%] h-[85%] max-w-7xl mx-auto p-4 sm:p-8 backdrop-blur-sm rounded-lg text-slate-950 flex flex-col md:flex-row gap-8">
         {/* LICENSE 섹션 (왼쪽) */}

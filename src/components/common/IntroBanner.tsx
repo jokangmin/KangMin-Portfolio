@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import bannerImage from '../../assets/banner2.png';
-import bannerMyImage from '../../assets/my1-remove.png';
-import bannerMyImage2 from '../../assets/my2-remove.png';
+import bannerImage from '../../assets/banner2.webp';
+import bannerMyImage from '../../assets/my1-remove.webp';
+import bannerMyImage2 from '../../assets/my2-remove.webp';
 
 interface IntroBannerProps {
     animationStarted: boolean;
@@ -20,7 +20,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
 
   return (
     <motion.div
-      className="fixed inset-0 w-full h-screen overflow-hidden bg-[url(../../assets/banner2.png)] text-slate-950 flex flex-col items-center justify-center z-50"
+      className="fixed inset-0 w-full h-screen overflow-hidden bg-[url(../../assets/banner2.webp)] text-slate-950 flex flex-col items-center justify-center z-50"
       initial={{ opacity: 1, pointerEvents: 'auto' }}
       animate={animationStarted ? { opacity: 0, pointerEvents: 'none' } : { opacity: 1, pointerEvents: 'auto' }}
       transition={{ duration: 1.5, ease: 'easeInOut', delay: 1.5 }}

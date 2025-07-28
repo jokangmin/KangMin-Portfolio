@@ -59,7 +59,7 @@ const HomePage: React.FC = () => {
       <IntroBanner animationStarted={animationStarted} setAnimationStarted={setAnimationStarted} />
 
       {/* 배경 이미지를 위한 div (스크롤 시 고정) - IntroBanner 아래로 이동하여 스크롤 활성화 시 보이도록 */}
-      <div className="h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-[url('../src/assets/banner2.png')] z-10"></div>
+      <div className="h-screen bg-center bg-cover bg-no-repeat bg-fixed bg-[url('../src/assets/banner2.webp')] z-10"></div>
 
       {/* 고정된 UI 요소들 */}
       <HeaderFixedButtons />

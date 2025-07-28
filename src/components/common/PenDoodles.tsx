@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import pen1 from '../../assets/pen1-Photoroom.png';
-import pen2 from '../../assets/pen2-Photoroom.png';
-import pen3 from '../../assets/pen3-Photoroom.png';
-import pen4 from '../../assets/pen4-Photoroom.png';
-import pen5 from '../../assets/pen5-Photoroom.png';
-import pen6 from '../../assets/pen6-Photoroom.png';
+import pen1 from '../../assets/pen1-Photoroom.webp';
+import pen2 from '../../assets/pen2-Photoroom.webp';
+import pen3 from '../../assets/pen3-Photoroom.webp';
+import pen4 from '../../assets/pen4-Photoroom.webp';
+import pen5 from '../../assets/pen5-Photoroom.webp';
+import pen6 from '../../assets/pen6-Photoroom.webp';
 
 interface PenDoodlesProps {
     animationStarted: boolean;
