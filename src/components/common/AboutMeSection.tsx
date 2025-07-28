@@ -4,7 +4,7 @@ import myImage from '../../assets/my_imo.png';
 import { SiAmazonwebservices, SiCss3, SiDocker, SiFigma, SiGithubactions, SiHtml5, SiJavascript, SiMysql, SiNaver, SiNodedotjs, SiNotion, SiOracle, SiReact, SiSpringboot, SiTypescript } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 
-const AboutMeSection: React.FC = () => {
+const AboutMeSection: React.FC = React.memo(() => {
   return (
     <section
       id="about-me-section"
@@ -145,6 +145,6 @@ const AboutMeSection: React.FC = () => {
       </motion.div>
     </section>
   );
-};
+});
 
 export default AboutMeSection;

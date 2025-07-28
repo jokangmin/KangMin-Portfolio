@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const ProjectSection: React.FC = () => {
+const ProjectSection: React.FC = React.memo(() => {
   return (
     <section
       id="project-section"
@@ -161,6 +161,6 @@ const ProjectSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ProjectSection;

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import type React from 'react';
+import React from 'react';
 
-const EducationLicenseSection: React.FC = () => {
+const EducationLicenseSection: React.FC = React.memo(() => {
   return (
     <section
       id="education-section"
@@ -85,6 +85,6 @@ const EducationLicenseSection: React.FC = () => {
       </div>
     </section>
   );
-};
+});
 
 export default EducationLicenseSection;

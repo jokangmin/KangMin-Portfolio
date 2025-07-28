@@ -1,8 +1,9 @@
 import { FaGithub } from 'react-icons/fa';
 import { SiVelog } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
+import React from 'react';
 
-const HeaderFixedButtons = () => {
+const HeaderFixedButtons: React.FC = React.memo(() => {
   return (
     <div className="fixed top-5 right-5 z-50 flex gap-3">
       <a
@@ -29,6 +30,6 @@ const HeaderFixedButtons = () => {
       </a>
     </div>
   );
-};
+});
 
 export default HeaderFixedButtons;

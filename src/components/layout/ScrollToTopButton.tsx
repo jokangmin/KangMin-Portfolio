@@ -1,6 +1,7 @@
+import React from 'react';
 import { FaArrowUp } from 'react-icons/fa';
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton: React.FC = React.memo(() => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -13,6 +14,6 @@ const ScrollToTopButton = () => {
       <FaArrowUp size={40} />
     </button>
   );
-};
+});
 
 export default ScrollToTopButton;
