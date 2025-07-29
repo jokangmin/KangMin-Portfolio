@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import myImage from '../../assets/my_imo.webp';
+import profileImage from '../../assets/profile.webp';
 import { SiAmazonwebservices, SiCss3, SiDocker, SiFigma, SiGithubactions, SiHtml5, SiJavascript, SiMysql, SiNaver, SiNodedotjs, SiNotion, SiOracle, SiReact, SiSpringboot, SiTypescript } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 
@@ -22,7 +22,7 @@ const AboutMeSection: React.FC = React.memo(() => {
           transition={{ duration: 0.8 }}
         >
           <img
-            src={myImage}
+            src={profileImage}
             alt="조강민 Profile"
             className="w-32 h-32 sm:w-48 sm:h-48 object-cover rounded-full border-2 sm:border-4 border-myPalette-500 shadow-lg mb-2 sm:mb-4"
             loading="lazy"

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import profileImage from '../../assets/profile.webp';
-import foxImage from '../../assets/fox2.webp';
-import rabbitImage from '../../assets/rabbit2.webp';
-import cowImage from '../../assets/cow2.webp';
+import myImage from '../../assets/my_imo.webp';
+import rabbitImage from '../../assets/pen_rocket.webp';
+import rocketImage from '../../assets/pen_rocket.webp';
+import cowImage from '../../assets/pen_rocket.webp';
 
 interface MainContentOverlayProps {
   animationStarted: boolean;
@@ -75,9 +75,9 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
 
       {/* 오른쪽 이미지 */}
       <motion.img
-        src={profileImage}
+        src={myImage}
         alt="Profile"
-        className="w-64 h-auto rounded-2xl shadow-xl object-cover ms-7 pointer-events-auto"
+        className="w-64 h-auto rounded-2xl object-cover ms-7 pointer-events-auto"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={animationStarted ? { opacity: 1, scale: 1 } : {}}
         transition={{ delay: 6.5, duration: 1 }}
@@ -86,7 +86,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
 
       {/* fox - project 이미지 및 호버 애니메이션 */}
       <motion.div
-        className="fixed bottom-[10%] left-[17%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+        className="fixed bottom-[7%] left-[8%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 7.5, duration: 1 }}
@@ -102,9 +102,9 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
           Project
         </motion.h2>
         <motion.img
-          src={foxImage}
+          src={rocketImage}
           alt="Fox Icon"
-          className="w-56"
+          className="w-96"
           animate={{ scale: isFoxHovered ? 0.95 : 1, y: isFoxHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
           loading="lazy"
@@ -113,7 +113,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
 
       {/* rabbit - about me 이미지 및 호버 애니메이션 */}
       <motion.div
-        className="fixed top-[20%] left-[10%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+        className="fixed top-[27%] left-[10%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 7.5, duration: 1 }}
@@ -131,7 +131,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
         <motion.img
           src={rabbitImage}
           alt="Rabbit Icon"
-          className="w-56"
+          className="w-80"
           animate={{ scale: isRabbitHovered ? 0.95 : 1, y: isRabbitHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
           loading="lazy"
@@ -140,7 +140,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
 
       {/* cow - education & License 이미지 및 호버 애니메이션 */}
       <motion.div
-        className="fixed bottom-[20%] right-48 z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
+        className="fixed bottom-[22%] right-[7%] z-30 p-4 flex flex-col items-center justify-center pointer-events-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 7.5, duration: 1 }}
@@ -158,7 +158,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({ animationStarte
         <motion.img
           src={cowImage}
           alt="Cow Icon"
-          className="w-64"
+          className="w-96"
           animate={{ scale: isCowHovered ? 0.95 : 1, y: isCowHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
           loading="lazy"
