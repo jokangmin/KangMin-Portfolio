@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'phone': '500px'
+      },
       colors: {
         myPalette: {
           100: '#CCD5AE',

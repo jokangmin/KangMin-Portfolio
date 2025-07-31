@@ -36,7 +36,8 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
       />
 
       <motion.p
-        className="text-5xl font-bold text-slate-950 fixed left-[41%] top-1/3"
+        className="sm:text-3xl sm:left-[32%] sm:top-[39%] md:left-[37%] md:top-[38%] lg:left-[37%] lg:top-[37%] lg:text-4xl xl:left-[42%] xl:text-4xl 2xl:text-5xl 2xl:left-[41%] 2xl:top-1/3
+         text-slate-950 font-bold fixed phone:left-[32%] phone:top-[40%] phone:text-2xl left-[28%] text-2xl top-[35%]"
         initial={{ x: '0%', opacity: 1 }}
         animate={animationStarted ? { x: '-400%', opacity: 0 } : { x: '0%', opacity: 1 }}
         transition={{ duration: 2, ease: 'easeInOut' }}
@@ -47,7 +48,8 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
       <motion.img
         src={isBannerMyImageHovered ? bannerMyImage2 : bannerMyImage}
         alt="banner my Image"
-        className="w-64 object-cover rounded-xl fixed left-[45%] top-[45%] -translate-x-1/2 -translate-y-1/2"
+        className="phone:left-[28%] phone:top-[46%] sm:left-[32%] md:left-[37%] lg:left-[40%] xl:left-[43%] 2xl:left-[45%]
+        left-[22%] top-[42%] w-64 object-cover rounded-xl fixed -translate-x-1/2 -translate-y-1/2"
         initial={{ x: '0%' }}
         animate={animationStarted ? { x: '-400%', opacity: 0 } : { x: '0%', opacity: 1 }}
         transition={{ duration: 1.5, ease: 'easeInOut' }}
@@ -57,7 +59,8 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
 
       {/* "Click Screen */}
       <motion.p
-        className="text-3xl font-semibold text-myPalette-500 fixed left-[47%] bottom-[25%] transform -translate-x-1/2"
+        className="phone:left-[34%] phone:bottom-[25%] sm:left-[37%] sm:bottom-[26%] md:left-[41%] md:bottom-[25%] md:text-2xl lg:left-[43%] lg:bottom-[25%] xl:left-[46%] xl:bottom-[25%] 2xl:left-[47%] 2xl:bottom-[25%]
+        left-[31%] bottom-[28%] text-2xl font-semibold text-myPalette-500 fixed transform -translate-x-1/2"
         initial={{ opacity: 1 }}
         animate={animationStarted ? { x: '-400%', opacity: 0 } : { y: [-7, 7, -7] }}
         transition={
