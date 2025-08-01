@@ -38,15 +38,16 @@ const ProjectSection: React.FC = React.memo(() => {
         >
           Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {projects.map((project, index) => (
             <motion.div
-              key={project.id} // 고유한 id를 key로 사용
-              className="bg-white rounded-lg shadow-xl overflow-hidden"
+              key={project.id}
+              className="bg-white rounded-lg shadow-xl overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-2xl"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: (index + 1) * 0.1 }} // 각 카드에 순차적 딜레이 적용
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+              whileHover={{ y: -8, scale: 1.05 }}
             >
               <img
                 src={project.imageUrl}
@@ -62,7 +63,7 @@ const ProjectSection: React.FC = React.memo(() => {
                 <div className="flex flex-wrap gap-2 mb-2">
                   {project.skills.map((skill, skillIndex) => (
                     <span
-                      key={skillIndex} // 스킬 스팬에도 고유 키
+                      key={skillIndex}
                       className="inline-block bg-myPalette-100 text-myPalette-700 rounded-full px-2 py-1 text-xs font-semibold"
                     >
                       {skill}
@@ -70,7 +71,6 @@ const ProjectSection: React.FC = React.memo(() => {
                   ))}
                 </div>
                 <p className="text-gray-500 text-xs">📅 {project.period}</p>
-                {/* "상세 보기" 버튼 클릭 시 모달 열기 */}
                 <button
                   onClick={() => handleOpenModal(project)}
                   className="inline-block mt-4 bg-myPalette-500 hover:bg-myPalette-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-colors"
@@ -83,7 +83,6 @@ const ProjectSection: React.FC = React.memo(() => {
         </div>
       </div>
 
-      {/* ProjectModal 컴포넌트: selectedProject가 있을 때만 렌더링 */}
       {selectedProject && (
         <ProjectModal
           isOpen={isModalOpen}
