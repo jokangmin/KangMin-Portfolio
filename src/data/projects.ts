@@ -10,6 +10,7 @@ import interview_talk_project_img1 from '../assets/project2.webp';
 import interview_talk_project_img2 from '../assets/interview_main.webp';
 import interview_talk_project_img3 from '../assets/interview_interview.webp';
 import interview_talk_project_img4 from '../assets/interview_interview2.webp';
+import interview_talk_project_img5 from '../assets/System.webp';
 //project 3
 import moivo_project_img from '../assets/project3.webp';
 //project 4
@@ -117,6 +118,7 @@ export const projects: ProjectData[] = [
       { src: interview_talk_project_img2, alt: '메인 페이지 2' },
       { src: interview_talk_project_img3, alt: 'interview 페이지 1' },
       { src: interview_talk_project_img4, alt: 'interview 페이지 2' },
+      { src: interview_talk_project_img5, alt: 'System Architecture' },
     ],
     features: [
       '직종 및 유형별 맞춤형 면접 질문 제공: 사용자가 선택한 직종과 면접 유형에 맞춰 OpenAI API를 활용하여 최적화된 면접 질문을 생성합니다. 신입부터 경력자까지, 수준별로 맞춤화된 질문을 제공하여 실전 대비 능력을 극대화합니다.',
