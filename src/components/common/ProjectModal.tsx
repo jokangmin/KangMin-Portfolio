@@ -36,18 +36,12 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project }) => {
-  // 주요 기능 및 특징 아코디언 상태 (기본적으로 모두 열림)
-  const [openFeatures, setOpenFeatures] = useState<number[]>(
-    project.features ? [...Array(project.features.length).keys()] : []
-  );
-  // 성능 최적화 아코디언 상태 (기본적으로 모두 열림)
+  const [openFeatures, setOpenFeatures] = useState<number[]>([]);
   const [openOptimizations, setOpenOptimizations] = useState<number[]>(
     project.performanceOptimizations ? [...Array(project.performanceOptimizations.length).keys()] : []
   );
-  // 트러블 슈팅 아코디언 상태 (기본적으로 모두 닫힘)
   const [openTroubleShooting, setOpenTroubleShooting] = useState<number[]>([]);
-  
-  const [selectedImage, setSelectedImage] = useState<string | null>(null); // 이미지 확대 상태
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen || selectedImage ? 'hidden' : 'auto';
@@ -104,7 +98,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
   return (
     <>
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 pt-16 bg-black/30 backdrop-blur-sm"
         onClick={handleOverlayClick}
       >
         {/* Modal Box */}
@@ -125,11 +119,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
           {/* 상단 고정 콘텐츠 영역 (제목, 기간, 기술 스택, 외부 링크) */}
           <div className="relative p-6 md:p-8 pb-4 border-b border-gray-200">
             <div className="flex items-baseline mb-2">
-              <h2 className="text-3xl font-bold text-slate-900 mr-2">
+              <h2 className="text-2xl phone:text-3xl font-bold text-slate-900 mr-2">
                 {project.title}
               </h2>
               {project.numberOfDevelopers && (
-                <p className="text-base text-gray-500 font-medium">
+                <p className="text-sm phone:text-base text-gray-500 font-medium">
                   (개발 인원 : {project.numberOfDevelopers}인)
                 </p>
               )}
@@ -137,7 +131,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
             <p className="text-gray-600 text-base mb-4">{project.description}</p>
 
             <div className="flex justify-between items-center mb-4">
-              <p className="text-sm text-gray-500 font-medium">📅 기간: {project.period}</p>
+              <p className="text-xs phone:text-sm text-gray-500 font-medium">📅 기간: {project.period}</p>
               <div className="flex space-x-2">
                 {project.githubLink && (
                   <a
@@ -166,10 +160,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
           {/* 스크롤 가능한 콘텐츠 영역 */}
           <div className="overflow-y-auto flex-grow px-6 md:px-8 pt-4 pb-6 md:pb-8">
             {/* 사용 기술 및 언어 */}
-            <section className="mb-6 bg-gray-50 p-4 rounded-lg">
+            <section className="mb-6 bg-myDoodlePalette-bg p-4 rounded-lg">
               <img src={project.imageUrl} alt={project.title} className="w-full h-auto object-cover" />
 
-              <h3 className="text-xl font-bold text-myPalette-700 mb-3 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-myPalette-700 mb-3 pt-6 flex items-center gap-2">
                 <FaCode className="text-myPalette-500" /> 사용 기술 및 언어
               </h3>
               <div className="flex flex-wrap gap-2">

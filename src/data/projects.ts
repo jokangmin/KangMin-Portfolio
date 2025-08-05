@@ -1,8 +1,20 @@
 // src/data/projects.ts
-import portfolio_project_img from '../assets/project1.webp';
-import interview_talk_project_img from '../assets/project2.webp';
+//project 1
+import portfolio_project_img1 from '../assets/project1.webp';
+import portfolio_project_img2 from '../assets/main_screen.webp';
+import portfolio_project_img3 from '../assets/about me.webp';
+import portfolio_project_img4 from '../assets/education.webp';
+import portfolio_project_img5 from '../assets/project_screen.webp';
+//project 2
+import interview_talk_project_img1 from '../assets/project2.webp';
+import interview_talk_project_img2 from '../assets/interview_main.webp';
+import interview_talk_project_img3 from '../assets/interview_interview.webp';
+import interview_talk_project_img4 from '../assets/interview_interview2.webp';
+//project 3
 import moivo_project_img from '../assets/project3.webp';
+//project 4
 import book_project_img from '../assets/project4.webp';
+//project 5
 import odiga_project_img from '../assets/project5.webp';
 
 export interface ProjectData {
@@ -31,20 +43,19 @@ export const projects: ProjectData[] = [
     description: '나만의 웹 사이트 포트폴리오',
     period: '2025년 7월 19일 - 진행중',
     skills: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Router Dom', 'React Icons'],
-    imageUrl: portfolio_project_img,
-    numberOfDevelopers: 1, // 개인 프로젝트
+    imageUrl: portfolio_project_img1,
+    numberOfDevelopers: 1,
     detailedDescription: `
       이 프로젝트는 저의 기술 스택과 작업물을 소개하는 개인 포트폴리오 웹사이트입니다.
       기획부터 디자인까지 제가 직접 작업했으며, 노션이나 템플릿 소스 대신 저만의 개성을 담은 사이트를 만들고 싶어 제작하게 되었습니다.
-      주요 색상인 파스텔톤들을 활용해 전체적으로 심플하고 귀여운 느낌을 주었으며,
+      두들 스타일과 주요 색상인 파스텔톤들을 활용해 전체적으로 심플하고 차분한 느낌을 주었으며,
       사용자 경험(UX)과 내용 구성을 최우선으로 고려하며 제작하고 있습니다.
       현재도 피드백을 수용하고 지속적으로 개선하며 고도화 작업을 진행할 예정입니다.
     `,
     features: [
       '인터랙티브한 환영 페이지: 초기 로드 시 배경은 고정되어 있으며, 로딩 및 페이지 클릭 시 애니메이션 이미지들이 등장합니다. 전체적으로 귀여운 스타일, 사용자 클릭에 반응하는 애니메이션 배경 이미지와 텍스트, 그리고 시각적으로 흥미로운 첫인상을 제공합니다.',
       '직관적인 탐색: GitHub, Velog, 이메일 등 외부 링크에 쉽게 접근할 수 있는 고정된 상단 버튼과, 페이지 어디에서든 최상단으로 이동할 수 있는 "위로 가기" 버튼을 제공합니다.',
-      '호버 인터랙션: 페이지 위치한 캐릭터들을 통해 목차 이동을 제공 ("Project" 아이콘(여우 이미지)에 마우스를 올리면 `Project` 텍스트가 나타나고 아이콘이 살짝 움직이는 재밌는 인터랙션을 제공합니다.)',
-      '반응형 디자인: 다양한 화면 크기에서도 최적의 사용자 경험을 제공하도록 설계되었습니다.',
+      '호버 인터랙션: 페이지 위치한 캐릭터들을 통해 목차 이동을 제공',
       '부드러운 페이지 전환: `react-router-dom`을 사용하여 싱글 페이지 애플리케이션(SPA) 내에서 매끄러운 페이지 전환을 구현했습니다. 이를 통해 사용자는 페이지 전체가 새로고침되는 느낌 없이 빠르게 다른 섹션으로 이동할 수 있습니다.',
       '모듈화된 프로젝트 정보: 프로젝트 데이터는 별도의 `projects.ts` 파일로 분리하여 관리하고 있습니다. 이를 통해 컴포넌트의 가독성을 높이고 데이터의 유지보수성을 향상시켰습니다.'
     ],
@@ -81,35 +92,72 @@ export const projects: ProjectData[] = [
       }
     ],
     screenshots: [
-      { src: portfolio_project_img, alt: '메인 화면' },
-      { src: 'https://via.placeholder.com/800x600/fedcba/ffffff?text=소개+화면+이미지', alt: '나에 대한 소개 화면' }, // 실제 스크린샷 이미지로 교체 필요
+      { src: portfolio_project_img1, alt: '섬네일 화면' },
+      { src: portfolio_project_img2, alt: 'main screen' },
+      { src: portfolio_project_img3, alt: 'about me screen' },
+      { src: portfolio_project_img4, alt: 'education & license screen' },
+      { src: portfolio_project_img5, alt: 'project screen' },
     ],
     githubLink: 'https://github.com/jokangmin/KangMin-Portfolio',
-    deployLink: 'https://your-portfolio.com', // 실제 배포 링크가 있다면 업데이트
+    deployLink: 'https://your-portfolio.com',
   },
   {
     id: 2,
     title: 'TalkTalk Ai Interview 프로젝트',
     description: 'AI 면접 시뮬레이션 웹 애플리케이션 개발',
-    period: '2025년 2월 15일 - 2025년 6월 15일 (리팩토링)',
-    skills: ['React', 'Spring Boot / Java', 'OpenAI API', 'JavaScript', 'MySQL', 'Node.js'],
-    imageUrl: interview_talk_project_img,
-    numberOfDevelopers: 4, // 예시
-    detailedDescription: `AI 면접 시뮬레이션 웹 애플리케이션은 사용자가 실제 면접 환경과 유사한 조건에서 AI와의 대화를 통해 면접 연습을 할 수 있도록 돕는 서비스입니다. 주요 기능으로는 음성 인식 기반의 질문 응답, AI 피드백 제공, 면접 데이터 분석 등이 있습니다. 현재 개발 마무리 단계이며, 사용자 친화적인 UI와 강력한 AI 피드백 시스템을 구축하는 데 중점을 두었습니다.`,
-    githubLink: 'https://github.com/your-repo/talktalk-ai',
+    period: '2025년 2월 15일 - 리팩토링 진행중',
+    skills: ['React / js', 'Spring Boot / Java', 'OpenAI API', 'MySQL', 'Node.js', 'AWS'],
+    imageUrl: interview_talk_project_img1,
+    numberOfDevelopers: 1,
+    detailedDescription: `AI 면접 코치 웹은 사용자가 실제 면접 환경과 유사한 조건에서 AI와의 대화를 통해 면접 연습을 할 수 있도록 돕는 서비스입니다. 주요 기능으로는 상황에 맞는 질문 생성 및 AI 피드백 제공, 면접 데이터 분석 등이 있습니다. 사용자 친화적인 UI와 AI 피드백 시스템을 구축하는 데 중점을 두었습니다.`,
+    githubLink: 'https://github.com/jokangmin/TalkTalkInterview_Ai',
+    deployLink: 'https://www.ai-interview.store/',
     screenshots: [
-      { src: 'https://via.placeholder.com/800x600/aaddff/ffffff?text=AI+면접+시뮬레이션+화면', alt: 'AI 면접 시뮬레이션' },
+      { src: interview_talk_project_img1, alt: '메인 페이지 1' },
+      { src: interview_talk_project_img2, alt: '메인 페이지 2' },
+      { src: interview_talk_project_img3, alt: 'interview 페이지 1' },
+      { src: interview_talk_project_img4, alt: 'interview 페이지 2' },
+    ],
+    features: [
+      '직종 및 유형별 맞춤형 면접 질문 제공: 사용자가 선택한 직종과 면접 유형에 맞춰 OpenAI API를 활용하여 최적화된 면접 질문을 생성합니다. 신입부터 경력자까지, 수준별로 맞춤화된 질문을 제공하여 실전 대비 능력을 극대화합니다.',
+      '실시간 AI 평가 및 피드백: 사용자가 제출한 텍스트 답변을 AI가 즉시 분석하여 논리성, 내용의 적합성 등을 평가합니다. `면접관의 관점`에서 구체적인 개선점을 제시하여 답변의 질을 향상시킬 수 있도록 돕습니다.',
+      '면접 질문 및 피드백 저장: 모든 면접 연습 기록(질문, 답변, AI 피드백)을 체계적으로 저장합니다. 이 기능은 사용자가 자신의 발전 과정을 확인하고 취약한 부분을 효율적으로 복습할 수 있는 핵심적인 학습 도구입니다.',
+      '나만의 면접 질문 카드: 사용자는 연습 중 중요하다고 생각하는 질문들을 `즐겨찾기`에 추가할 수 있습니다. 개인화된 질문 카드를 통해 핵심 질문만 모아 집중적으로 연습하고, 불필요한 질문은 손쉽게 삭제할 수 있습니다.',
+      '안전한 보안: JWT(JSON Web Token) 기반 인증, Spring Security를 통한 접근 제어, 그리고 BCrypt 해싱을 이용한 비밀번호 암호화로 사용자 데이터를 안전하게 보호합니다. 최고 수준의 보안 기술을 적용하여 신뢰할 수 있는 서비스를 제공합니다.'
+    ],
+    performanceOptimizations: [
+      '라우터 최적화: `react-router-dom`을 사용하여 싱글 페이지 애플리케이션(SPA) 라우팅을 구현했습니다. 이를 통해 페이지 이동 시 전체 페이지를 다시 로드하지 않아도 되므로, 사용자에게 더 빠르고 매끄러운 페이지 전환 경험을 제공합니다.',
+      '전역 상태 관리: 전역 상태를 관리하기 위해 Context API를 사용했습니다. 이를 통해 props drilling(컴포넌트 트리를 따라 데이터를 전달하는 과정)을 방지하고, 필요한 컴포넌트에서만 상태에 접근하도록 하여 불필요한 리렌더링을 최소화합니다.',
+      '코드 리팩토링: 불필요한 반복문을 줄이거나, 알고리즘을 개선하여 코드의 효율성을 꾸준히 높이고 있습니다. 메모리 누수(Memory Leak)를 방지합니다.',
+      '인덱싱(Indexing): 자주 조회되는 컬럼에 인덱스를 생성해 쿼리 속도를 높였습니다.',
     ],
     contribution: [
       '프론트엔드 React 컴포넌트 설계 및 개발',
       '백엔드 Spring Boot API 엔드포인트 구축 및 DB 연동',
-      'OpenAI API 연동 및 인터페이스 구현'
+      'OpenAI API 연동 및 인터페이스 구현',
+      'JWT(JSON Web Token) 기반 인증 시스템을 설계하고 구현',
+      'Spring Security를 도입하여 사용자 인증, 권한 관리, 데이터 접근 제어를 관리',
+      '데이터베이스 인덱싱 및 효율적인 쿼리 최적화를 통해 API 응답 속도를 개선',
+      'RESTful API를 설계하고 개발, CORS 설정을 통해 프론트엔드와의 안전한 교차 출처 통신 환경을 구축',
+
     ],
     troubleShooting: [
       {
-        problem: '음성 인식 정확도 및 반응 속도 문제',
-        solution: 'Web Speech API 및 외부 STT 서비스 연동 최적화, 비동기 처리 개선.'
-      }
+        problem: '프론트와 백엔드를 배포하고 이용중, 혼합컨텐츠 차단 정책 에러 이슈',
+        solution: '프론트엔드 쪽에서는 https로 처리하는 반면, 백엔드로 보내질 때 http 주소를 통해 보내지는게 보안상의 문제로 EC2 서버에 SSL 인증서(Let’s Encrypt 등)를 적용'
+      },
+      {
+        problem: '질문-답변-피드백 흐름에서 적절한 AI temperature 수치 조정 이슈',
+        solution: '기술적 설명보다는 정서적 위로 등 전반적으로 칭찬 위주, 내용 반복이 있어 temperature 및 top_p, max_tokens, presence_penalty 수정'
+      },
+      {
+        problem: 'AWS RDS MySQL 데이터베이스에 연결하지 못하고 Communications link failure 오류를 발생시키는 상황',
+        solution: 'GitHub Actions Secrets (EC2_HOST) 수정, EC2 인스턴스 재부팅, DB 비밀번호 재설정 및 재배포'
+      },
+      {
+        problem: '질문 불러오기 POST 403 (Forbidden) 및 GET 401 (Unauthorized) 에러',
+        solution: 'JWT 인증 필터 추가 후, 세션 기반으로 모두 처리되고있던 코드를 JWT 기반 인증으로 리팩토링'
+      },
     ],
   },
   {
