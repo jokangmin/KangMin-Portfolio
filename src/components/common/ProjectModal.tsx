@@ -289,11 +289,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                 <p className="text-sm text-gray-600 mb-4">(이미지를 클릭하면 크게 볼 수 있어요.)</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {project.screenshots.map((shot, idx) => (
-                    <div key={idx} className="relative group">
+                    <div key={idx} className="relative group aspect-video">
                       <img
                         src={shot.src}
                         alt={shot.alt}
-                        className="w-full h-auto rounded-lg border border-gray-200 shadow-md object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
+                        className="absolute inset-0 w-full h-full rounded-lg border border-gray-200 shadow-md object-cover cursor-pointer transition-transform duration-300 group-hover:scale-105"
                         onClick={() => setSelectedImage(shot.src)}
                       />
                       <p className="text-center text-gray-600 text-sm mt-2">{shot.alt}</p>

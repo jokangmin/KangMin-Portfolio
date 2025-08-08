@@ -10,11 +10,29 @@ import interview_talk_project_img1 from '../assets/project2.webp';
 import interview_talk_project_img2 from '../assets/interview_main.webp';
 import interview_talk_project_img3 from '../assets/interview_interview.webp';
 import interview_talk_project_img4 from '../assets/interview_interview2.webp';
-import interview_talk_project_img5 from '../assets/System.webp';
+import interview_talk_project_img5 from '../assets/interview_my.webp';
+import interview_talk_project_img6 from '../assets/System.webp';
 //project 3
 import moivo_project_img from '../assets/project3.webp';
+import moivo_project_img_system from '../assets/moivo_system.webp';
+import moivo_project_img_erd from '../assets/moivo_erd.webp';
+import moivo_project_gif_main from '../assets/moivo_main_web_point1.webp';
+import moivo_project_gif_main2 from '../assets/moivo_main_point2.webp';
+import moivo_project_today1 from '../assets/today1.webp';
+import moivo_project_today2 from '../assets/today2.webp';
+import moivo_project_mypage1 from '../assets/moivo2_1.webp';
+import moivo_project_mypage2 from '../assets/moivo2_3.webp';
+import moivo_project_mypage3 from '../assets/moivo2_2.webp';
+import moivo_project_pay from '../assets/moivo2_4.webp';
+import moivo_project_mail from '../assets/moivo2_7.webp';
+import moivo_project_qna from '../assets/moivo2_5.webp';
+import moivo_project_product1 from '../assets/moivo_product.webp';
+import moivo_project_product2 from '../assets/moivo_product2.webp';
+import moivo_project_admin from '../assets/moivo_admin.webp';
 //project 4
 import book_project_img from '../assets/project4.webp';
+import book_project_gif from '../assets/booboobook_main.webp';
+import book_project_gif2 from '../assets/booboobook_book detail.webp';
 //project 5
 import odiga_project_img from '../assets/project5.webp';
 
@@ -110,7 +128,9 @@ export const projects: ProjectData[] = [
     skills: ['React / js', 'Spring Boot / Java', 'OpenAI API', 'MySQL', 'Node.js', 'AWS'],
     imageUrl: interview_talk_project_img1,
     numberOfDevelopers: 1,
-    detailedDescription: `AI 면접 코치 웹은 사용자가 실제 면접 환경과 유사한 조건에서 AI와의 대화를 통해 면접 연습을 할 수 있도록 돕는 서비스입니다. 주요 기능으로는 상황에 맞는 질문 생성 및 AI 피드백 제공, 면접 데이터 분석 등이 있습니다. 사용자 친화적인 UI와 AI 피드백 시스템을 구축하는 데 중점을 두었습니다.`,
+    detailedDescription: `
+    AI 면접 코치 웹은 사용자가 실제 면접 환경과 유사한 조건에서 AI와의 대화를 통해 면접 연습을 할 수 있도록 돕는 서비스입니다. 
+    주요 기능으로는 상황에 맞는 질문 생성 및 AI 피드백 제공, 면접 데이터 분석 등이 있습니다. 사용자 친화적인 UI와 AI 피드백 시스템을 구축하는 데 중점을 두었습니다.`,
     githubLink: 'https://github.com/jokangmin/TalkTalkInterview_Ai',
     deployLink: 'https://www.ai-interview.store/',
     screenshots: [
@@ -118,7 +138,8 @@ export const projects: ProjectData[] = [
       { src: interview_talk_project_img2, alt: '메인 페이지 2' },
       { src: interview_talk_project_img3, alt: 'interview 페이지 1' },
       { src: interview_talk_project_img4, alt: 'interview 페이지 2' },
-      { src: interview_talk_project_img5, alt: 'System Architecture' },
+      { src: interview_talk_project_img5, alt: '나의 질문 페이지' },
+      { src: interview_talk_project_img6, alt: 'System Architecture' },
     ],
     features: [
       '직종 및 유형별 맞춤형 면접 질문 제공: 사용자가 선택한 직종과 면접 유형에 맞춰 OpenAI API를 활용하여 최적화된 면접 질문을 생성합니다. 신입부터 경력자까지, 수준별로 맞춤화된 질문을 제공하여 실전 대비 능력을 극대화합니다.',
@@ -160,35 +181,119 @@ export const projects: ProjectData[] = [
         problem: '질문 불러오기 POST 403 (Forbidden) 및 GET 401 (Unauthorized) 에러',
         solution: 'JWT 인증 필터 추가 후, 세션 기반으로 모두 처리되고있던 코드를 JWT 기반 인증으로 리팩토링'
       },
+      {
+        problem: '해결했던 CORS 에러가 동일하게 발생하는 문제 (Java 프로세스 미실행)',
+        solution: 'RDS 데이터베이스의 보안 그룹에 IP 주소 대신 EC2 인스턴스의 보안 그룹 ID를 직접 소스로 지정하는 인바운드 규칙(MYSQL/Aurora, 포트 3306)을 추가'
+      },
     ],
   },
   {
     id: 3,
     title: 'Moivo 프로젝트',
-    description: '모바일 기반의 영화 정보 및 예매 플랫폼 개발',
+    description: '현대 소비자들의 요구에 맞춘 전자상거래 플랫폼 개발',
     period: '2024년 11월 15일 - 2025년 1월 3일',
-    skills: ['React / JS', 'Node.js', 'Spring Boot / Java', 'JWT', 'MySQL'],
+    skills: ['React / JS', 'Redux', 'RESTful API', 'Node.js', 'Spring Boot / Java', 'JWT', 'MySQL'],
     imageUrl: moivo_project_img,
-    numberOfDevelopers: 3, // 예시
-    detailedDescription: `Moivo 프로젝트는 모바일 환경에 최적화된 영화 정보 및 예매 플랫폼입니다. React Native(혹은 React로 모바일 웹)를 사용하여 개발했으며, Node.js와 Spring Boot를 백엔드로 활용했습니다. 실시간 영화 정보, 상영 시간표 조회, 간편 예매 기능 등을 제공합니다.`,
-    githubLink: 'https://github.com/your-repo/moivo',
-    screenshots: [
-      { src: 'https://via.placeholder.com/800x600/bbddff/ffffff?text=영화+목록+화면', alt: '영화 목록' },
+    numberOfDevelopers: 7,
+    detailedDescription: `
+    Moivo 프로젝트는 사용자 및 판매자 모두에게 편리한 환경이 구축된 전자상거래 플랫폼입니다. React + js 를 사용하여 개발했으며, Node.js와 Spring Boot를 백엔드로 활용했습니다. 직관적인 탐색과 날씨 및 상황별 맞춤 상품 추천 제공, 결제 및 마이 페이지 등을 제공합니다.`,
+    features: [
+      '깔끔한 사용자 경험 제공: 세련되고 직관적인 UI/UX로 고객 만족 극대화',
+      '개인화 서비스 제공: 날씨 및 사용자 데이터를 활용한 맞춤 추천 시스템',
+      '사용자 편의성 향상: 간편 로그인, 간소화된 결제, 장바구니 및 좋아요 시스템',
+      '기능 통합: 쇼핑, 리뷰, 결제 등 전자상거래 필수 기능 일원화',
+      '효율적 관리 지원: 관리자에게 상품 및 사용자 데이터 관리 도구 제공',
     ],
-    teamReview: '조강민님은 복잡한 문제 해결에 탁월하며, 팀원들과의 소통을 통해 프로젝트의 완성도를 높이는 데 크게 기여했습니다.'
+    performanceOptimizations: [
+      'SPA 라우터 최적화: `react-router-dom`을 사용하여 싱글 페이지 애플리케이션(SPA) 라우팅을 구현했습니다. 이를 통해 페이지 이동 시 전체 페이지를 다시 로드하지 않아도 되므로, 사용자에게 더 빠르고 매끄러운 페이지 전환 경험을 제공합니다.',
+      '렌더링 최적화: React.memo, useCallback, useMemo 사용한 스크롤 인터랙션이나 무한 슬라이드처럼 이벤트가 많은 UI에서 불필요한 리렌더링 방지',
+      'DB 성능 최적화: 불필요한 SELECT * 제거, 필요한 컬럼만 조회해 쿼리 최적화, JOIN을 최소화하고 인덱스(Index) 적용',
+      'API 최적화: 결제 승인과 페이지 응답을 분리하여 관리',
+    ],
+    contribution: [
+      '프론트엔드 React 컴포넌트 설계 및 전역 상태 관리 개발',
+      '스크롤 인터랙티브 메인 페이지 - 무한 슬라이드',
+      'React Router를 활용한 SPA 구조 구현',
+      '오늘의 추천 상품 페이지 (Front, Back)',
+      '토스 결제 및 SMTP, 마이 페이지 (Front. Back)',
+      'DOM 조작, 데이터 관리 및 출력, 비동기 처리',
+      '주요 페이지 반응형(@media) 웹 구현',
+      '관리자 현황 페이지',
+    ],
+    troubleShooting: [
+      {
+        problem: '로그인 실패 시 404 에러 출력 및 빈 화면',
+        solution: 'AuthContext의 navigate(`/login`)을 /user로 변경 (디버깅 우선순위 설정) 이뷰 발생 시 기본적인 주소 값 확인이 필수적'
+      },
+      {
+        problem: '회원가입 실패 (Spring Security 추가 후), 엔터티 이름 설정 불일치로 DB 컬럼이 중복 생성됨',
+        solution: '엔터티 필드 이름을 isAdmin으로 통일, SnakeCase 자동 매핑 규칙으로 인한 중복 생성 방지'
+      },
+      {
+        problem: '메인 페이지 및 라우터 Context 처리 문제, 상위 라우터의 Context가 하위 모든 정보 간섭 발생',
+        solution: 'App.jsx에서 Context를 페이지별로 분리하여 관리, Context 간의 간섭 최소화'
+      },
+      {
+        problem: '배포 후 MySQL 서버 오류 및 로컬 서버 실행 불가, MySQL 스케줄러의 락 타임 문제로 테이블 접근 충돌',
+        solution: '스케줄러 처리 분리 및 컬럼별 개별 트랜잭션으로 설계 변경, DB에 과도한 부하가 발생하지 않도록 초기에 효율적인 설계 필요'
+      },
+    ],
+    githubLink: 'https://github.com/jokangmin/Moivo_project',
+    screenshots: [
+      { src: moivo_project_gif_main, alt: '메인 구동 시연 1' },
+      { src: moivo_project_gif_main2, alt: '메인 구동 시연 2' },
+      { src: moivo_project_today2, alt: '오늘의 추천 페이지 1' },
+      { src: moivo_project_today1, alt: '오늘의 추천 페이지 2' },
+      { src: moivo_project_product1, alt: '상품 페이지 1' },
+      { src: moivo_project_product2, alt: '상품 페이지 2' },
+      { src: moivo_project_mypage1, alt: '마이 페이지' },
+      { src: moivo_project_mypage2, alt: '마이 - 구매 및 배송 현황 페이지' },
+      { src: moivo_project_mypage3, alt: '마이 - 구매 목록 상세 페이지' },
+      { src: moivo_project_pay, alt: '구매 페이지' },
+      { src: moivo_project_mail, alt: '구매 메일 발송' },
+      { src: moivo_project_qna, alt: '문의 페이지' },
+      { src: moivo_project_admin, alt: '관리자 페이지' },
+      { src: moivo_project_img_system, alt: 'System Architecture' },
+      { src: moivo_project_img_erd, alt: 'ERD' },
+    ],
   },
   {
     id: 4,
     title: 'BooBooBook 프로젝트',
-    description: '그림책 기반의 사용자 참여형 스토리텔링 플랫폼',
+    description: '효율적인 도서 정보 제공 및 관리 플랫폼',
     period: '2024년 9월 30일 - 2024년 10월 21일',
     skills: ['React / JS', 'Spring / Java', 'JQuery', 'ORACLE'],
     imageUrl: book_project_img,
-    numberOfDevelopers: 5, // 예시
-    detailedDescription: `BooBooBook은 사용자들이 그림책을 직접 만들고, 스토리를 이어가는 참여형 플랫폼입니다. React를 사용하여 직관적이고 반응성이 뛰어난 프론트엔드를 구축했으며, Spring과 Oracle을 활용하여 백엔드 로직과 데이터 관리를 처리했습니다.`,
-    githubLink: 'https://github.com/your-repo/booboo-book',
+    numberOfDevelopers: 3,
+    detailedDescription: `
+    BooBooBook은 독서 커뮤니티의 수요 증가, 독자들의 독서 경험 공유 및 소통 강화 플랫폼입니다. React를 사용하여 직관적인 프론트엔드를 구축했으며, Spring과 Oracle을 활용하여 백엔드 로직과 데이터 관리를 처리했습니다.`,
+    features: [
+      '사용자 친화적인 회원 관리 시스템: 사용자가 쉽고 빠르게 가입, 로그인, 정보 수정, 탈퇴 등을 할 수 있도록 설계된 회원 관리 기능',
+      '다양한 도서 정보 및 리뷰 플랫폼: 다양한 책의 기본 정보와 함께 사용자 리뷰를 공유하고 평가할 수 있는 공간입니다.',
+      '책 목록 및 상세 정보 제공: 사용자에게 전체 도서 목록과 각 도서의 상세 정보를 제공하는 기능입니다.',
+      '문의 게시판: 사용자가 서비스 이용 중 발생한 문의 사항을 등록하고 답변을 받을 수 있는 게시판입니다.',
+    ],
+    performanceOptimizations: [
+      '폼 검증 클라이언트 처리:  비밀번호 규칙, 이메일 형식 검증을 프론트에서 수행해 서버 부하 감소.',
+      'WT 토큰 사용: 세션 저장소 부하 감소, 인증 속도 향상',
+      'DB 인덱스: 이메일/아이디 컬럼에 인덱스 추가로 로그인·중복 검사 속도 개선',
+      '페이지네이션: 대량 데이터 조회 시 속도 개선',
+      '@Async 비동기 처리: 답변 알림 메일 발송 시 API 응답 지연 방지',
+    ],
+    contribution: [
+      'JWT 기반 인증 구현, 로그인 시 발급된 토큰으로 세션 없이 인증 유지',
+      '소셜 로그인 연동, 카카오 API를 활용한 간편 로그인',
+      'UX 최적화 - 입력 오류 실시간 검증, 반응형 디자인 지원',
+      '도서 데이터 관리, 도서 검색 및 정보 저장 (정렬 및 필터링)',
+      '평점 및 리뷰 작성·수정·삭제 - 로그인한 사용자만 작성 가능',
+      '목록 페이지 디자인 및 페이지네이션, 상세 페이지 디자인',
+      'CRUD 구현함, 게시글 작성, 수정, 삭제, 조회 가능',
+      '관리자 답변 기능 - 관리자 전용 답변 작성 UI 제공',
+    ],
+    githubLink: 'https://github.com/BOOBOO-BOOK/BBOOK',
     screenshots: [
-      { src: 'https://via.placeholder.com/800x600/ccddff/ffffff?text=그림책+만들기+화면', alt: '그림책 만들기' },
+      { src: book_project_gif, alt: '메인 동적 화면' },
+      { src: book_project_gif2, alt: '상품 및 디테일 동적 화면' },
     ],
   },
   {
