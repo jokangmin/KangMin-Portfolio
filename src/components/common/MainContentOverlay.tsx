@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import myImage from '../../assets/my_imo.webp';
-import catImage from '../../assets/pen_cat.webp';
+import catImage from '../../assets/pen_cat_temp.webp';
 import rocketImage from '../../assets/pen_rocket.webp';
-import bookImage from '../../assets/pen_book.webp';
+import bookImage from '../../assets/pen_book_temp.webp';
 
 interface MainContentOverlayProps {
   animationStarted: boolean;
