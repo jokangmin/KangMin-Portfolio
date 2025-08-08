@@ -35,6 +35,8 @@ import book_project_gif from '../assets/booboobook_main.webp';
 import book_project_gif2 from '../assets/booboobook_book detail.webp';
 //project 5
 import odiga_project_img from '../assets/project5.webp';
+import odiga_project_img2 from '../assets/odiga2.webp';
+import odiga_project_img3 from '../assets/odiga3.webp';
 
 export interface ProjectData {
   id: number;
@@ -299,16 +301,34 @@ export const projects: ProjectData[] = [
   {
     id: 5,
     title: 'ODIGA 프로젝트',
-    description: '여행 계획 및 공유를 위한 맞춤형 추천 서비스',
+    description: '여행을 위한 예약 및 추천 서비스',
     period: '2024년 8월 30일 - 2024년 9월 27일',
-    skills: ['React / JS', 'Spring / Java', 'MyBatis', 'ORACLE'],
+    skills: ['Eclipse / Java', 'MyBatis', 'ORACLE', 'JQuery', 'Tomcat'],
     imageUrl: odiga_project_img,
-    numberOfDevelopers: 2, // 예시
-    detailedDescription: `ODIGA 프로젝트는 사용자의 여행 취향과 과거 기록을 기반으로 맞춤형 여행 코스를 추천하고, 이를 다른 사용자들과 공유할 수 있는 서비스입니다. React를 사용하여 대규모 애플리케이션에 적합한 구조를 설계하고, Spring과 Oracle로 안정적인 백엔드 시스템을 구축했습니다.`,
-    githubLink: 'https://github.com/your-repo/odiga',
-    screenshots: [
-      { src: 'https://via.placeholder.com/800x600/ddeeff/ffffff?text=여행+계획+화면', alt: '여행 계획' },
+    numberOfDevelopers: 4,
+    detailedDescription: `
+    "ODIGA" 라는 여행 관련 사이트 개발 프로젝트 항공, 숙박, 투어, 맛집 게시판 등을 이용할 수 있으며, 사용자에게 여행에 관한 편의와 여러 정보들을 제공하기 위해 개발`,
+    features: [
+      '회원가입 및 수정: 사용자가 쉽고 빠르게 가입, 로그인, 정보 수정, 탈퇴 기능',
+      '맛집 리뷰 게시판: 사용자들이 쉽게 소통할 수 있는 리뷰 게시판',
+      '호텔 및 항공권 예약 페이지: 가독성이 좋은 예매 검색 및 정보 페이지',
+      '메인 페이지 배너 및 인기 여행지 추천: 여행사 디자인 참고해 제작'
     ],
-    teamReview: '조강민님은 분석적 사고로 어려운 기술적 난제를 해결하고, 팀의 생산성을 높이는 데 크게 기여했습니다.'
+    contribution: [
+      '전체적인 웹사이트 디자인 및 개발',
+      '회원가입 및 수정 페이지 ( Front & Back )',
+      'jQuery, MyBatis를 이용한 예외 처리 및 Oracle DB 연동',
+      '로그인 기능 및 로그인 시, 쿠키를 활용한 일정 시간 동안 ID 저장 기능 구현',
+      '게시물의 페이징, 좋아요, 댓글 수, 조회수, 별점, 신고 기능',
+      '세션 값을 이용한 회원 전용, 게시글 CRUD',
+      '게시물 댓글 마다 대댓글 구현'
+    ],
+    githubLink: 'https://github.com/jokangmin/Mini_project2',
+    screenshots: [
+      { src: odiga_project_img , alt: '시작 페이지' },
+      { src: odiga_project_img2 , alt: '호텔 페이지' },
+      { src: odiga_project_img3 , alt: '항공권 페이지' },
+    ],
+
   },
 ];
