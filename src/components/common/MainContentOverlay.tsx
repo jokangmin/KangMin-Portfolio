@@ -25,7 +25,6 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
   return (
     <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none
                     left-[4%] bottom-[12%] phone:bottom-[12%] sm:bottom-[12%] md:bottom-[9%] lg:bottom-[7%] xl:bottom-[5%] 2xl:bottom-[0%]">
-      {/* 텍스트 영역 */}
       <div className="text-right space-y-4 pointer-events-auto">
         <motion.h1
           className="font-bold
@@ -88,7 +87,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* 프로필 이미지 */}
       <motion.img
         src={myImage}
-        alt="Profile"
+        alt="개발자 조강민의 프로필 사진"
         className="pointer-events-auto rounded-2xl object-cover
           w-36 phone:w-44 sm:w-48 md:w-56 lg:w-60 xl:w-60 2xl:w-64
           h-auto"
@@ -119,7 +118,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
         </motion.h2>
         <motion.img
           src={rocketImage}
-          alt="Rocket Icon"
+          alt="프로젝트 섹션으로 이동하는 로켓 아이콘"
           className="w-56 sm:w-60 md:w-72 lg:w-80 xl:w-96"
           animate={{ scale: isFoxHovered ? 0.95 : 1, y: isFoxHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
@@ -148,7 +147,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
         </motion.h2>
         <motion.img
           src={catImage}
-          alt="Cat Icon"
+          alt="자기소개 섹션으로 이동하는 고양이 아이콘"
           className="w-36 phone:w-44 sm:w-52 md:w-56 lg:w-60 xl:w-72"
           animate={{ scale: isRabbitHovered ? 0.95 : 1, y: isRabbitHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
@@ -177,7 +176,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
         </motion.h2>
         <motion.img
           src={bookImage}
-          alt="Book Icon"
+          alt="교육 및 자격증 섹션으로 이동하는 책 아이콘"
           className="w-44 phone:w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72"
           animate={{ scale: isCowHovered ? 0.95 : 1, y: isCowHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
