@@ -100,7 +100,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* Project - rocket */}
       <motion.div
         className="fixed z-30 p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center pointer-events-auto
-          bottom-[26%] phone:bottom-[25%] sm:bottom-[23%] md:bottom-[16%] 2xl:bottom-[7%]
+          bottom-[26%] phone:bottom-[25%] sm:bottom-[23%] md:bottom-[16%] xl:bottom-[11%] 2xl:bottom-[7%]
           left-[0%] phone:left-[6%] sm:left-[7%] md:left-[8%] 2xl:left-[8%]"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
