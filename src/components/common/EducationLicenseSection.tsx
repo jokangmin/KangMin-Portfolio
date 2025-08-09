@@ -27,8 +27,10 @@ const EducationLicenseSection: React.FC = React.memo(() => {
   return (
     <section
       id="education-section"
-      className="relative z-40 h-screen flex items-center justify-center py-10 px-4 font-doodle bg-myDoodlePalette-bg"
+      className="relative z-30 h-screen flex items-center justify-center py-10 px-4 font-doodle"
     >
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
+
       <div className="relative z-10 w-[90%] md:w-[80%] h-[85%] max-w-5xl mx-auto flex items-center justify-center">
         <div className="absolute h-full w-full transform rounded-2xl bg-myDoodlePalette-card border-2 border-myDoodlePalette-border -rotate-6 scale-95 transition-transform duration-300"></div>
 

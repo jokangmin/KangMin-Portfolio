@@ -9,7 +9,7 @@ const ScrollToTopButton: React.FC = React.memo(() => {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-5 right-5 z-50 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
+      className="fixed bottom-5 right-5 z-40 bg-white p-2 rounded-full shadow hover:bg-gray-100 transition"
     >
       <h2>UP ⬆️</h2>
       <img

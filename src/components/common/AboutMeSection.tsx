@@ -12,7 +12,7 @@ const AboutMeSection: React.FC = React.memo(() => {
   return (
     <section
       id="about-me-section"
-      className="relative z-40 min-h-screen flex flex-col items-center justify-center bg-note-texture bg-repeat bg-fixed px-4 py-12"
+      className="relative z-30 min-h-screen flex flex-col items-center justify-center bg-note-texture bg-repeat bg-fixed px-4 py-12"
     >
       <div className="absolute inset-0 bg-white/70 backdrop-blur-[2px]"></div>
 

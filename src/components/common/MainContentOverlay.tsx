@@ -23,8 +23,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
   const [isCowHovered, setIsCowHovered] = useState<boolean>(false);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none
-                    left-[4%] bottom-[12%] phone:bottom-[12%] sm:bottom-[12%] md:bottom-[9%] lg:bottom-[7%] xl:bottom-[5%] 2xl:bottom-[0%]">
+    <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
       <div className="text-right space-y-4 pointer-events-auto">
         <motion.h1
           className="font-bold

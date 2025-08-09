@@ -24,7 +24,7 @@ const ProjectSection: React.FC = React.memo(() => {
   return (
     <section
       id="project-section"
-      className="relative z-40 py-10 px-4 bg-myPalette-200"
+      className="relative z-30 py-10 px-4 bg-myPalette-200"
     >
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
       <div className="absolute inset-0 bg-center bg-repeat bg-[url('../src/assets/circuit.png')] opacity-20"></div>

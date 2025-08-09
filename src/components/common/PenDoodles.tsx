@@ -17,7 +17,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       <motion.img
         src={pen1}
         alt="Pen doodle 1"
-        className="fixed z-40
+        className="fixed z-20
           w-[26%] top-[30%] right-[-1%]
           phone:w-[26%] phone:top-[27%] phone:right-[-1%]
           sm:w-[26%] sm:top-[24%] sm:right-[0%]
@@ -35,7 +35,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       <motion.img
         src={pen2}
         alt="Pen doodle 2"
-        className="fixed z-40
+        className="fixed z-20
           w-[95%] top-[20%] left-[4%]
           phone:w-[80%] phone:top-[20%] phone:left-[10%]
           sm:w-[75%] sm:top-[20%] sm:left-[5%]
@@ -53,7 +53,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       <motion.img
         src={pen3}
         alt="Pen doodle boom"
-        className="fixed z-40
+        className="fixed z-20
           w-[16%] bottom-[38%] left-[5%]
           phone:w-[14%] phone:bottom-[37%] phone:left-[4%]
           sm:w-[12%] sm:bottom-[35%] sm:left-[5%]
@@ -71,7 +71,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       <motion.img
         src={pen4}
         alt="Pen doodle 4"
-        className="fixed z-40
+        className="fixed z-20
           w-[20%] bottom-[16%] right-[31%]
           phone:w-[17%] phone:bottom-[15%] phone:right-[26%]
           sm:w-[14%] sm:bottom-[15%] sm:right-[25%]
@@ -89,7 +89,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       <motion.img
         src={pen5}
         alt="Pen doodle 5 - scroll"
-        className="fixed z-40
+        className="fixed z-20
           w-[40%] bottom-[4%] left-[31%]
           phone:w-[38%] phone:bottom-[3%] phone:left-[31%]
           sm:w-[32%] sm:bottom-[4%] sm:left-[35%]
