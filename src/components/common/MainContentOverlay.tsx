@@ -23,7 +23,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
   const [isCowHovered, setIsCowHovered] = useState<boolean>(false);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
+    <div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none bg-[url(../../assets/banner2.webp)]">
       <div className="text-right space-y-4 pointer-events-auto">
         <motion.h1
           className="font-bold
@@ -99,7 +99,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* Project - rocket */}
       <motion.div
         className="fixed z-30 p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center pointer-events-auto
-          bottom-[26%] phone:bottom-[25%] sm:bottom-[23%] md:bottom-[16%] xl:bottom-[11%] 2xl:bottom-[7%]
+          bottom-[20%] phone:bottom-[25%] sm:bottom-[23%] md:bottom-[16%] xl:bottom-[11%] 2xl:bottom-[7%]
           left-[0%] phone:left-[6%] sm:left-[7%] md:left-[8%] 2xl:left-[8%]"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
@@ -128,7 +128,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* About me - cat */}
       <motion.div
         className="fixed z-30 p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center pointer-events-auto
-          top-[25%] phone:top-[24%] sm:top-[23%] md:top-[21%] 2xl:top-[25%]
+          top-[28%] phone:top-[24%] sm:top-[23%] md:top-[21%] 2xl:top-[25%]
           left-[5%] phone:left-[2%] sm:left-[2%] md:left-[7%] 2xl:left-[12%]"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
@@ -157,7 +157,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* Education - book */}
       <motion.div
         className="fixed z-30 p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center pointer-events-auto
-          bottom-[16%] phone:bottom-[16%] sm:bottom-[16%] md:bottom-[13%] xl:bottom-[18%] 2xl:bottom-[19%]
+          bottom-[13%] phone:bottom-[16%] sm:bottom-[16%] md:bottom-[13%] xl:bottom-[18%] 2xl:bottom-[19%]
           right-[5%] phone:right-[5%] sm:right-[6%] md:right-[6.5%] 2xl:right-[7%]"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
