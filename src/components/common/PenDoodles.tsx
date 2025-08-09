@@ -16,7 +16,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       {/* pen1 */}
       <motion.img
         src={pen1}
-        alt="Pen doodle 1"
+        alt="손으로 그린 나를 가르키는 화살표와 스마일 펜 낙서"
         className="fixed z-20
           w-[26%] top-[34%] right-[-1%]
           phone:w-[26%] phone:top-[27%] phone:right-[-1%]
@@ -34,7 +34,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       {/* pen2 */}
       <motion.img
         src={pen2}
-        alt="Pen doodle 2"
+        alt="손으로 그린 강민 포트폴리오 글씨 낙서"
         className="fixed z-20
           w-[95%] top-[23%] left-[4%]
           phone:w-[80%] phone:top-[20%] phone:left-[10%]
@@ -52,7 +52,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       {/* pen3 */}
       <motion.img
         src={pen3}
-        alt="Pen doodle boom"
+        alt="손으로 그린 붐!이라는 글씨 낙서"
         className="fixed z-20
           w-[15%] bottom-[17rem] left-[5%]
           phone:w-[14%] phone:bottom-[37%] phone:left-[4%]
@@ -70,7 +70,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       {/* pen4 */}
       <motion.img
         src={pen4}
-        alt="Pen doodle 4"
+        alt="손으로 그린 클릭이라는 글씨 낙서"
         className="fixed z-20
           w-[17%] bottom-[13%] right-[31%]
           phone:w-[17%] phone:bottom-[15%] phone:right-[26%]
@@ -88,7 +88,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
       {/* pen5 (scroll 애니메이션) */}
       <motion.img
         src={pen5}
-        alt="Pen doodle 5 - scroll"
+        alt="손으로 그린 움직이는 스크롤을 시각적으로 표현한 글씨 낙서"
         className="fixed z-20
           w-[40%] bottom-[4%] left-[31%]
           phone:w-[38%] phone:bottom-[3%] phone:left-[31%]

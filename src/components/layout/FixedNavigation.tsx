@@ -25,7 +25,7 @@ const FixedNavigation: React.FC<FixedNavigationProps> = ({
   };
 
   return (
-    <motion.div
+    <motion.nav
       className="fixed top-5 left-5 z-50"
       initial={{ opacity: 0, x: -100 }}
       animate={animationStarted ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
@@ -113,6 +113,8 @@ const FixedNavigation: React.FC<FixedNavigationProps> = ({
       {/* Mobile Hamburger (md 미만) */}
       <div className="md:hidden">
         <button
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           onClick={toggleMenu}
           className="p-2 bg-white/80 rounded-md shadow-md backdrop-blur-sm"
         >
@@ -121,29 +123,31 @@ const FixedNavigation: React.FC<FixedNavigationProps> = ({
 
         {/* 드롭다운 메뉴 */}
         {menuOpen && (
-          <div className="mt-2 flex flex-col gap-2 bg-white/90 p-3 rounded-md shadow-lg backdrop-blur-sm">
-            <button
-              onClick={() => handleClick(scrollToAboutMe)}
-              className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
-            >
-              About me
-            </button>
-            <button
-              onClick={() => handleClick(scrollToEducation)}
-              className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
-            >
-              Education & License
-            </button>
-            <button
-              onClick={() => handleClick(scrollToProject)}
-              className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
-            >
-              Project
-            </button>
+          <div id="mobile-navigation" role="menu" aria-label="모바일 네비게이션 메뉴">
+            <div className="mt-2 flex flex-col gap-2 bg-white/90 p-3 rounded-md shadow-lg backdrop-blur-sm">
+              <button
+                onClick={() => handleClick(scrollToAboutMe)}
+                className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
+              >
+                About me
+              </button>
+              <button
+                onClick={() => handleClick(scrollToEducation)}
+                className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
+              >
+                Education & License
+              </button>
+              <button
+                onClick={() => handleClick(scrollToProject)}
+                className="text-base text-myPalette-700 font-semibold hover:bg-myPalette-100 rounded px-3 py-2"
+              >
+                Project
+              </button>
+            </div>
           </div>
         )}
       </div>
-    </motion.div>
+    </motion.nav>
   );
 };
 
