@@ -63,6 +63,7 @@
   * **Framer Motion**: 선언적이고 유연한 UI 애니메이션 구현을 위한 라이브러리
   * **React Icons**: 다양한 아이콘을 쉽게 사용할 수 있도록 돕는 라이브러리 (GitHub, Velog, Email, ArrowUp 아이콘)
   * **React Router Dom**: React 애플리케이션에서 라우팅 기능을 구현하여 SPA(Single Page Application)를 효율적으로 관리합니다.
+  * **react-helmet-async**: React 내에서 SEO를 위해 meta 태그와 document head 관리를 효율적으로 할 수 있도록 돕는 라이브러리
   * **Webpack/Vite (또는 기타 번들러)**: 프로젝트 빌드 및 애셋 관리
 
 ### 🚀 프로젝트 실행 방법
