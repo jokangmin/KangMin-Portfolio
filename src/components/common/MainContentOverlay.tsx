@@ -118,7 +118,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
         <motion.img
           src={rocketImage}
           alt="프로젝트 섹션으로 이동하는 로켓 아이콘"
-          className="w-56 sm:w-60 md:w-72 lg:w-80 xl:w-96"
+          className="w-52 sm:w-60 md:w-72 lg:w-80 xl:w-96"
           animate={{ scale: isFoxHovered ? 0.95 : 1, y: isFoxHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
           loading="lazy"
@@ -176,7 +176,7 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
         <motion.img
           src={bookImage}
           alt="교육 및 자격증 섹션으로 이동하는 책 아이콘"
-          className="w-44 phone:w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72"
+          className="w-40 phone:w-52 sm:w-56 md:w-60 lg:w-64 xl:w-72"
           animate={{ scale: isCowHovered ? 0.95 : 1, y: isCowHovered ? -10 : 0 }}
           transition={{ duration: 0.3 }}
           loading="lazy"

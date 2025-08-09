@@ -54,7 +54,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
         src={pen3}
         alt="Pen doodle boom"
         className="fixed z-20
-          w-[16%] bottom-[18rem] left-[5%]
+          w-[15%] bottom-[17rem] left-[5%]
           phone:w-[14%] phone:bottom-[37%] phone:left-[4%]
           sm:w-[12%] sm:bottom-[35%] sm:left-[5%]
           md:w-[10%] md:bottom-[32%] md:left-[11%]
@@ -72,7 +72,7 @@ const PenDoodles: React.FC<PenDoodlesProps> = ({ animationStarted }) => {
         src={pen4}
         alt="Pen doodle 4"
         className="fixed z-20
-          w-[20%] bottom-[13%] right-[31%]
+          w-[17%] bottom-[13%] right-[31%]
           phone:w-[17%] phone:bottom-[15%] phone:right-[26%]
           sm:w-[14%] sm:bottom-[15%] sm:right-[25%]
           md:w-[12%] md:bottom-[13%] md:right-[23%]
