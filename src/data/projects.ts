@@ -63,7 +63,7 @@ export const projects: ProjectData[] = [
     title: '포트폴리오 프로젝트',
     description: '나만의 웹 사이트 포트폴리오',
     period: '2025년 7월 19일 - 진행중',
-    skills: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Router Dom', 'React Icons'],
+    skills: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'React Router Dom', 'React Icons', 'react-helmet-async'],
     imageUrl: portfolio_project_img1,
     numberOfDevelopers: 1,
     detailedDescription: `
@@ -83,7 +83,8 @@ export const projects: ProjectData[] = [
     performanceOptimizations: [
       '컴포넌트 리렌더링 최적화: `React.memo`와 `useCallback`, `useMemo` 훅을 활용하여 함수 컴포넌트의 불필요한 리렌더링을 방지하고, Context API를 효율적으로 사용하여 전역 상태 변경으로 인한 성능 저하를 최소화했습니다.',
       '이미지 최적화: 차세대 이미지 포맷 변환 (WebP), 지연 로딩 (Lazy Loading), 반응형 이미지 (`srcset`)를 적용하여 파일 크기를 줄이고 로딩 속도를 개선했습니다.',
-      '코드 스플리팅 (Lazy Loading): `React.lazy`를 이용하여 초기 화면에 바로 보이지 않는 섹션의 코드를 필요할 때만 로드하도록 분할하여 초기 로딩 시간을 단축했습니다.'
+      '코드 스플리팅 (Lazy Loading): `React.lazy`를 이용하여 초기 화면에 바로 보이지 않는 섹션의 코드를 필요할 때만 로드하도록 분할하여 초기 로딩 시간을 단축했습니다.',
+      'SEO 최적화: `react-helmet-async` 라이브러리를 사용하여 동적으로 meta 태그와 시맨틱 태그 관리를 구현했고, alt 속성, h1 태그 하나 사용 등 SEO 친화적인 구조를 적용했습니다.',
     ],
     contribution: [
       '포트폴리오 제작 의도를 파악하고 기획 및 구체화 작업',
@@ -92,7 +93,8 @@ export const projects: ProjectData[] = [
       'PC, Mobile 반응형 UI/UX 디자인',
       '웹 표준 / 접근성 고려 및 인터랙션 작업 (Framer Motion 활용)',
       'React Router Dom을 이용한 SPA 라우팅 구현 및 페이지 전환 최적화',
-      'Context API를 활용한 전역 상태 관리 및 리렌더링 최적화'
+      'Context API를 활용한 전역 상태 관리 및 리렌더링 최적화',
+      '`react-helmet-async`를 활용하여 SEO 최적화 및 동적 meta 태그 관리 구현',
     ],
     troubleShooting: [
       {
