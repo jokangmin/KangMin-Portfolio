@@ -20,7 +20,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
 
   return (
     <motion.div
-      className="fixed inset-0 w-full h-screen overflow-hidden bg-[url(../../assets/banner2.webp)] text-slate-950 flex flex-col items-center justify-center z-50"
+      className="fixed inset-0 w-full h-auto overflow-hidden bg-[url(../../assets/banner2.webp)] text-slate-950 flex flex-col items-center justify-center z-50"
       initial={{ opacity: 1, pointerEvents: 'auto' }}
       animate={animationStarted ? { opacity: 0, pointerEvents: 'none' } : { opacity: 1, pointerEvents: 'auto' }}
       transition={{ duration: 1.5, ease: 'easeInOut', delay: 1.5 }}
@@ -60,7 +60,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
       {/* "Click Screen */}
       <motion.p
         className="phone:left-[34%] phone:bottom-[25%] sm:left-[37%] sm:bottom-[26%] md:left-[41%] md:bottom-[25%] md:text-2xl lg:left-[43%] lg:bottom-[25%] xl:left-[46%] xl:bottom-[25%] 2xl:left-[47%] 2xl:bottom-[25%]
-        left-[31%] bottom-[28%] text-2xl font-semibold text-myPalette-500 fixed transform -translate-x-1/2"
+        left-[31%] bottom-[20%] text-2xl font-semibold text-myPalette-500 fixed transform -translate-x-1/2"
         initial={{ opacity: 1 }}
         animate={animationStarted ? { x: '-400%', opacity: 0 } : { y: [-7, 7, -7] }}
         transition={
