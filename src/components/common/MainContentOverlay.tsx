@@ -99,8 +99,8 @@ const MainContentOverlay: React.FC<MainContentOverlayProps> = ({
       {/* Project - rocket */}
       <motion.div
         className="fixed z-30 p-2 sm:p-3 md:p-4 flex flex-col items-center justify-center pointer-events-auto
-          bottom-[20%] phone:bottom-[25%] sm:bottom-[23%] md:bottom-[16%] xl:bottom-[11%] 2xl:bottom-[7%]
-          left-[0%] phone:left-[6%] sm:left-[7%] md:left-[8%] 2xl:left-[8%]"
+          bottom-[10rem] phone:bottom-[10rem] sm:bottom-[9rem] md:bottom-[7rem] xl:bottom-[6rem] 2xl:bottom-[4rem]
+          left-[-1.5rem] sm:left-[1rem] md:left-[3rem] xl:left-[5rem] 2xl:left-[9rem]"
         initial={{ opacity: 0, y: 20 }}
         animate={animationStarted ? { opacity: 1, y: 0 } : {}}
         transition={{ delay: 7.5, duration: 1 }}
