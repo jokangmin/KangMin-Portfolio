@@ -20,7 +20,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
 
   return (
     <motion.div
-      className="fixed inset-0 w-full h-auto overflow-hidden bg-[url(../../assets/banner2.webp)] text-slate-950 flex flex-col items-center justify-center z-50"
+      className="fixed inset-0 w-full h-auto overflow-hidden text-slate-950 flex flex-col items-center justify-center z-50"
       initial={{ opacity: 1, pointerEvents: 'auto' }}
       animate={animationStarted ? { opacity: 0, pointerEvents: 'none' } : { opacity: 1, pointerEvents: 'auto' }}
       transition={{ duration: 1.5, ease: 'easeInOut', delay: 1.5 }}

@@ -27,7 +27,6 @@ const ProjectSection: React.FC = React.memo(() => {
       className="relative z-30 py-10 px-4 bg-myPalette-200"
     >
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-center bg-repeat bg-[url('../src/assets/circuit.png')] opacity-20"></div>
       <div className="relative z-10 max-w-6xl mx-auto py-8">
         <motion.h2
           className="text-4xl font-extrabold text-slate-900 mb-8 text-center"
