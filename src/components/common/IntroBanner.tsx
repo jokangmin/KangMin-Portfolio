@@ -28,7 +28,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
     >
       <motion.img
         src={bannerImage}
-        alt="포트폴리오 주인 조강민과 포트폴리오의 메인 컨셉을 보여주는 이미지"
+        alt="웹 포트폴리오 주인 조강민과 포트폴리오의 메인 컨셉을 보여주는 이미지"
         className="w-full h-full object-cover rounded-xl fixed -translate-x-1/2"
         initial={{ x: '0%' }}
         animate={animationStarted ? { x: '-200%' } : { x: '0%' }}
@@ -47,7 +47,7 @@ const IntroBanner: React.FC<IntroBannerProps> = ({ animationStarted, setAnimatio
 
       <motion.img
         src={isBannerMyImageHovered ? bannerMyImage2 : bannerMyImage}
-        alt="포트폴리오 주인 조강민을 나타내는 웃는 모습의 캐릭터 아이콘"
+        alt="웹 포트폴리오 주인 조강민을 나타내는 웃는 모습의 캐릭터 아이콘"
         className="phone:left-[28%] phone:top-[46%] sm:left-[32%] md:left-[37%] lg:left-[40%] xl:left-[43%] 2xl:left-[45%]
         left-[22%] top-[42%] w-64 object-cover rounded-xl fixed -translate-x-1/2 -translate-y-1/2"
         initial={{ x: '0%' }}

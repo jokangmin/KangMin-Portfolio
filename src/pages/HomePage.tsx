@@ -35,22 +35,22 @@ const HomePage: React.FC = () => {
 
       {/* SEO: 메타 태그와 JSON-LD 스크립트 삽입 */}
       <Helmet>
-        <title>조강민 | 풀스택 개발자 웹 포트폴리오</title>
-        <meta name="description" content="안녕하세요, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자 조강민입니다. React, JavaScript, TypeScript, Spring Boot 등 기반의 다양한 프로젝트를 확인해보세요." />
+        <title>웹 포트폴리오 : 풀스택 개발자 조강민</title>
+        <meta name="description" content="웹 포트폴리오 : 조강민입니다, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자입니다. React, JavaScript, TypeScript, Spring Boot 등 기반의 다양한 프로젝트를 확인해보세요." />
         <meta name="keywords" content="프론트엔드, 백엔드, 개발자, 포트폴리오, 웹 포트폴리오, React, TypeScript, JavaScript, SpringBoot, 조강민" />
         <link rel="canonical" href="https://kang-min-portfolio-zeta.vercel.app/" />
         
         {/* Open Graph (소셜 미디어 공유 시 표시될 정보) */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="조강민 | 풀스택 개발자 웹 포트폴리오" />
-        <meta property="og:description" content="안녕하세요, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자 조강민입니다." />
+        <meta property="og:description" content="웹 포트폴리오 : 조강민입니다, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자입니다." />
         <meta property="og:image" content="https://kang-min-portfolio-zeta.vercel.app/my_imo.webp" />
         <meta property="og:url" content="https://kang-min-portfolio-zeta.vercel.app/" />
 
         {/* Twitter 카드 */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="조강민 | 풀스택 개발자 웹 포트폴리오" />
-        <meta name="twitter:description" content="안녕하세요, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자 조강민입니다." />
+        <meta name="twitter:description" content="웹 포트폴리오 : 조강민입니다, AI 프로젝트 개발 및 서비스 배포까지 전 과정을 경험한 풀스택 개발자입니다." />
         <meta name="twitter:image" content="https://kang-min-portfolio-zeta.vercel.app/my_imo.webp" />
 
         {/* JSON-LD 스크립트 삽입 */}
