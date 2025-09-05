@@ -67,27 +67,6 @@
   * **react-helmet-async**: React 내에서 SEO를 위해 meta 태그와 document head 관리를 효율적으로 할 수 있도록 돕는 라이브러리
   * **Webpack/Vite (또는 기타 번들러)**: 프로젝트 빌드 및 애셋 관리
 
-### 🚀 프로젝트 실행 방법
-
-1.  **저장소 클론**:
-    ```bash
-    git clone [프로젝트_저장소_URL]
-    cd [프로젝트_폴더_이름]
-    ```
-2.  **의존성 설치**:
-    ```bash
-    npm install
-    # 또는
-    yarn install
-    ```
-3.  **개발 서버 실행**:
-    ```bash
-    npm run dev
-    # 또는
-    yarn dev
-    ```
-    프로젝트가 실행되면 브라우저에서 `http://localhost:3000` (또는 지정된 포트)으로 접속할 수 있습니다.
-
 ### 📝 추가 정보
 
 이 포트폴리오는 지속적으로 업데이트될 예정입니다.
